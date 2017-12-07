@@ -3,6 +3,7 @@ const fs = require('fs')
 const path = require('path')
 const mkdirp = require('mkdirp')
 const copy = require('recursive-copy')
+const spawn = require('cross-spawn')
 const Handlebars = require('handlebars')
 const logger = require('../logger')
 
@@ -15,15 +16,19 @@ const options = {
 }
 const templates = path.resolve(__dirname, '..', 'templates')
 
-const createBasicApp = project => {
-  const wd = path.resolve(process.cwd(), project)
-
-  mkdirp(wd, err => {
+const createFolder = (abspath, folder) => {
+  mkdirp(abspath, err => {
     if (err) {
-      logger.error(`Failed to create <folder: ${project}: ${err.message}`)
+      logger.error(`Failed to create <folder: ${folder}: ${err.message}`)
       process.exit(1)
     }
   })
+}
+
+const createBasicApp = project => {
+  const wd = path.resolve(process.cwd(), project)
+
+  createFolder(process.cwd(), project)
 
   copy(templates, wd, options).then(results => {
     fs.writeFileSync(
@@ -36,6 +41,27 @@ const createBasicApp = project => {
     )
     fs.unlinkSync(path.resolve(wd, 'package.json.hbs'))
   })
+  const pkgs = [
+    'babel-cli',
+    'babel-eslint',
+    'babel-jest',
+    'babel-plugin-transform-class-properties',
+    'babel-plugin-transform-decorators',
+    'eslint',
+    'eslint-config-standard',
+    'eslint-config-standard-react',
+    'eslint-plugin-import',
+    'eslint-plugin-node',
+    'eslint-plugin-promise',
+    'eslint-plugin-react',
+    'eslint-plugin-standard',
+    'husky',
+    'jest',
+    'lint-staged',
+    'prettier-standard'
+  ].join(' ')
+  spawn.sync('cd', [wd])
+  spawn.sync('npm', ['install', '--save-dev', pkgs])
 }
 
 const createESNextApp = project => {

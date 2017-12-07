@@ -2,7 +2,9 @@
   "private": true,
   "name": "{{ project }}",
   "version": "{{ version }}",
-  "scripts": { "precommit": "lint-staged" },
+  "scripts": {
+    "precommit": "lint-staged"
+  },
   "eslintConfig": {
     "extends": [
      "standard",
@@ -14,5 +16,16 @@
       "prettier-standard",
       "git add"
     ]
+  },
+  "jest": {
+    "rootDir": ".",
+    "transform": {
+      ".*": "<rootDir>/node_modules/babel-jest"
+    },
+    "globals": {
+      "__DEV__": true
+    },
+    "setupTestFrameworkScriptFile": "./tests/bootstrap.js",
+    "testRegex": "./tests/.*.spec.jsx?$"
   }
 }
