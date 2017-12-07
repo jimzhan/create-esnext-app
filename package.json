@@ -2,7 +2,7 @@
   "name": "create-esnext-app",
   "version": "1.0.0",
   "description": "Create ESNext apps with no build configuration.",
-  "main": "src/index.js",
+  "main": "bootstrap.js",
   "scripts": {
     "test": "npm test"
   },
@@ -24,5 +24,12 @@
   "bugs": {
     "url": "https://github.com/jimzhan/create-esnext-app/issues"
   },
-  "homepage": "https://github.com/jimzhan/create-esnext-app#readme"
+  "homepage": "https://github.com/jimzhan/create-esnext-app#readme",
+  "dependencies": {
+    "chalk": "^2.3.0",
+    "handlebars": "^4.0.11",
+    "inquirer": "^4.0.1",
+    "mkdirp": "^0.5.1",
+    "validate-npm-package-name": "^3.0.0"
+  }
 }
