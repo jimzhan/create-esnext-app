@@ -1,11 +1,12 @@
 #!/usr/bin/env node
 const fs = require('fs')
+const ora = require('ora')
 const path = require('path')
 const mkdirp = require('mkdirp')
 const copy = require('recursive-copy')
-const spawn = require('cross-spawn')
+const spawn = require('child_process').spawnSync
 const Handlebars = require('handlebars')
-const logger = require('../logger')
+const { logger } = require('../utils')
 
 const encoding = 'utf-8'
 const options = {
@@ -29,24 +30,12 @@ const createBasicApp = project => {
   const wd = path.resolve(process.cwd(), project)
 
   createFolder(process.cwd(), project)
-
-  copy(templates, wd, options).then(results => {
-    fs.writeFileSync(
-      path.resolve(wd, 'package.json'),
-      compile('package.json.hbs', {
-        project,
-        version: '0.1.0'
-      }),
-      encoding
-    )
-    fs.unlinkSync(path.resolve(wd, 'package.json.hbs'))
-  })
   const pkgs = [
     'babel-cli',
     'babel-eslint',
     'babel-jest',
     'babel-plugin-transform-class-properties',
-    'babel-plugin-transform-decorators',
+    'babel-plugin-transform-decorators-legacy',
     'eslint',
     'eslint-config-standard',
     'eslint-config-standard-react',
@@ -59,14 +48,29 @@ const createBasicApp = project => {
     'jest',
     'lint-staged',
     'prettier-standard'
-  ].join(' ')
-  spawn.sync('cd', [wd])
-  spawn.sync('npm', ['install', '--save-dev', pkgs])
+  ]
+  copy(templates, wd, options).then(results => {
+    fs.writeFileSync(
+      path.resolve(wd, 'package.json'),
+      compile('package.json.hbs', {
+        project,
+        version: '0.1.0'
+      }),
+      encoding
+    )
+    fs.unlinkSync(path.resolve(wd, 'package.json.hbs'))
+
+    spawn('npm', ['install', '--save-dev'].concat(pkgs), {
+      cwd: wd,
+      stdio: 'inherit'
+    })
+  })
 }
 
 const createESNextApp = project => {
-  logger.info(`Start creating esnext app: ${project}`)
+  const spinner = ora(`Start creating esnext app: ${project}`).start()
   createBasicApp(project)
+  spinner.stop()
 }
 
 const compile = (filename, metadata = {}) => {

@@ -6,7 +6,7 @@ const major = currentNodeVer.split('.')[0]
 
 const requiredVer = 8
 const createESNextApp = require('./tasks/create-esnext-app')
-const logger = require('./logger')
+const { logger } = require('./utils')
 
 if (major < requiredVer) {
   logger.error(
