@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 const inquirer = require('inquirer')
 const validateProjectName = require('validate-npm-package-name')
 const currentNodeVer = process.versions.node
@@ -15,16 +16,19 @@ if (major < requiredVer) {
   process.exit(1)
 }
 
-inquirer.prompt([{
-  type: 'input',
-  name: 'project',
-  message: 'Please provide your project name:'
-}])
-.then(answers => {
-  if (!validateProjectName(answers.project)) {
-    logger.error(`Please provide a valid project name`)
-    process.exit(1)
-  } else {
-    createESNextApp(answers.project)
-  }
-})
+inquirer
+  .prompt([
+    {
+      type: 'input',
+      name: 'project',
+      message: 'Please provide your project name:'
+    }
+  ])
+  .then(answers => {
+    if (!validateProjectName(answers.project)) {
+      logger.error(`Please provide a valid project name`)
+      process.exit(1)
+    } else {
+      createESNextApp(answers.project)
+    }
+  })

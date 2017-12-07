@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 const fs = require('fs')
 const path = require('path')
 const mkdirp = require('mkdirp')
@@ -15,10 +16,14 @@ const createESNextApp = project => {
       logger.error(`Failed to create folder: ${err.message}`)
       process.exit(1)
     }
-    fs.writeFileSync(pkg, compile('package.json.hbs', {
-      project,
-      version: '0.1.0'
-    }), encoding)
+    fs.writeFileSync(
+      pkg,
+      compile('package.json.hbs', {
+        project,
+        version: '0.1.0'
+      }),
+      encoding
+    )
   })
 }
 
