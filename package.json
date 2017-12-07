@@ -31,9 +31,11 @@
   "dependencies": {
     "chalk": "^2.3.0",
     "handlebars": "^4.0.11",
+    "husky": "^0.14.3",
     "inquirer": "^4.0.1",
+    "lint-staged": "^6.0.0",
     "mkdirp": "^0.5.1",
-    "semantic-release": "^8.2.0",
+    "recursive-copy": "^2.0.7",
     "validate-npm-package-name": "^3.0.0"
   }
 }

@@ -2,8 +2,7 @@
 const inquirer = require('inquirer')
 const validateProjectName = require('validate-npm-package-name')
 const currentNodeVer = process.versions.node
-const semver = currentNodeVer.split('.')
-const major = semver[0]
+const major = currentNodeVer.split('.')[0]
 
 const requiredVer = 8
 const createESNextApp = require('./tasks/create-esnext-app')
@@ -11,7 +10,11 @@ const logger = require('./logger')
 
 if (major < requiredVer) {
   logger.error(
-    `You are running Node ${currentNodeVer}.\nCreate ESNext App requires Node ${requiredVer} or higher.\nPlease upgrade your node.`
+    [
+      `You are running Node ${currentNodeVer}.`,
+      `Create ESNext App requires Node ${requiredVer} or higher.`,
+      'Please upgrade your node.'
+    ].join('\n')
   )
   process.exit(1)
 }

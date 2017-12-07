@@ -1,0 +1,18 @@
+{
+  "private": true,
+  "name": "{{ project }}",
+  "version": "{{ version }}",
+  "scripts": { "precommit": "lint-staged" },
+  "eslintConfig": {
+    "extends": [
+     "standard",
+     "standard-react"
+    ]
+  },
+  "lint-staged": {
+    "src/**/*.{js,jsx,css,less,scss}": [
+      "prettier-standard",
+      "git add"
+    ]
+  }
+}
