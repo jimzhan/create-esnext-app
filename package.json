@@ -1,0 +1,28 @@
+{
+  "name": "create-esnext-app",
+  "version": "1.0.0",
+  "description": "Create ESNext apps with no build configuration.",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "npm test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jimzhan/create-esnext-app.git"
+  },
+  "keywords": [
+    "zero-configuration",
+    "build-tools",
+    "babel",
+    "esnext",
+    "es2015",
+    "es2016",
+    "es2017"
+  ],
+  "author": "Jim Zhan <jim.zhan@me.com>",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/jimzhan/create-esnext-app/issues"
+  },
+  "homepage": "https://github.com/jimzhan/create-esnext-app#readme"
+}
