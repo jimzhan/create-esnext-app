@@ -1,6 +1,12 @@
 #!/usr/bin/env node
+const consts = require('./consts')
 const logger = require('./logger')
+const template = require('./template')
+const xfs = require('./xfs')
 
 module.exports = {
-  logger
+  consts,
+  logger,
+  template,
+  xfs
 }

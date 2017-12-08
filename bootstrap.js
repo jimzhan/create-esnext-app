@@ -25,6 +25,12 @@ inquirer
       type: 'input',
       name: 'project',
       message: 'Please provide your project name:'
+    },
+    {
+      type: 'list',
+      name: 'template',
+      message: 'Which template you need?',
+      choices: ['basic']
     }
   ])
   .then(answers => {
@@ -32,6 +38,6 @@ inquirer
       logger.error(`Please provide a valid project name`)
       process.exit(1)
     } else {
-      createESNextApp(answers.project)
+      createESNextApp(answers)
     }
   })

@@ -1,0 +1,50 @@
+#!/usr/bin/env node
+const fs = require('fs')
+const path = require('path')
+const copy = require('recursive-copy')
+const { consts, template, xfs } = require('../utils')
+
+const packages = {
+  dependencies: [],
+  devDependencies: [
+    'babel-cli',
+    'babel-eslint',
+    'babel-jest',
+    'babel-plugin-transform-class-properties',
+    'babel-plugin-transform-decorators-legacy',
+    'eslint',
+    'eslint-config-standard',
+    'eslint-config-standard-react',
+    'eslint-plugin-import',
+    'eslint-plugin-node',
+    'eslint-plugin-promise',
+    'eslint-plugin-react',
+    'eslint-plugin-standard',
+    'husky',
+    'jest',
+    'lint-staged',
+    'prettier-standard'
+  ]
+}
+
+const createBasicApp = project => {
+  const cwd = process.cwd()
+  const dest = path.resolve(cwd, project)
+
+  xfs.createFolder(cwd, project)
+  copy(consts.templates, dest, consts.copyOptions).then(results => {
+    fs.writeFileSync(
+      path.resolve(dest, 'package.json'),
+      template.compile('package.json.hbs', {
+        project,
+        version: '0.1.0'
+      }),
+      consts.encoding
+    )
+    fs.unlinkSync(path.resolve(dest, 'package.json.hbs'))
+
+    xfs.install(packages.devDependencies, dest)
+  })
+}
+
+module.exports = createBasicApp
