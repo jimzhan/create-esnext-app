@@ -36,6 +36,8 @@ const createBasicApp = project => {
   const dest = path.resolve(cwd, project)
 
   sys.createFolder(cwd, project)
+  sys.execute('npm', ['install', '-g', 'babel-eslint'])
+
   copy(consts.templates, dest, consts.copyOptions).then(results => {
     fs.writeFileSync(
       path.resolve(dest, 'package.json'),

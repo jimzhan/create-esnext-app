@@ -7,7 +7,7 @@
     "create-esnext-app": "./bootstrap.js"
   },
   "scripts": {
-    "test": "npm test"
+    "test": "node ./tests/index.js"
   },
   "repository": {
     "type": "git",
