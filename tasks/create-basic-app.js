@@ -28,7 +28,8 @@ const packages = {
     'jest',
     'lint-staged',
     'per-env',
-    'prettier-standard'
+    'prettier-standard',
+    'rimraf'
   ]
 }
 
