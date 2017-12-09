@@ -4,9 +4,13 @@
   "version": "{{ version }}",
   "scripts": {
     "precommit": "lint-staged",
+    "prebuild": "npm run clean",
+    "build": "babel src -d build",
+    "clean": "rimraf build",
     "start": "per-env",
-    "start:development": "babel-node src/index",
-    "start:production": "babel src -d build && node build/index.js"    
+    "start:development": "babel-node src/index.js",
+    "prestart:production": "npm run build",
+    "start:production": "node build/index.js"
   },
   "babel": {
     "presets": ["env", "jest"],
