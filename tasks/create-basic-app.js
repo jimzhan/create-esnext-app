@@ -27,6 +27,7 @@ const packages = {
     'husky',
     'jest',
     'lint-staged',
+    'per-env',
     'prettier-standard'
   ]
 }
