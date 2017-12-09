@@ -3,12 +3,28 @@
   "name": "{{ project }}",
   "version": "{{ version }}",
   "scripts": {
-    "precommit": "lint-staged"
+    "precommit": "lint-staged",
+    "start": "cross-env NODE_ENV=development babel-node src/index.js"
+  },
+  "babel": {
+    "presets": ["env", "jest"],
+    "plugins": [
+      "transform-class-properties",
+      "transform-decorators-legacy",
+      ["module-resolver", {
+        "root": ["./src"],
+        "alias": {
+          "tests": "./tests"
+        }
+      }]
+    ]
   },
   "eslintConfig": {
+    "root": true,
+    "parser": "babel-eslint",
     "extends": [
-     "standard",
-     "standard-react"
+      "standard",
+      "standard-react"
     ]
   },
   "lint-staged": {

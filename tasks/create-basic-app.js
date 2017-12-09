@@ -2,7 +2,7 @@
 const fs = require('fs')
 const path = require('path')
 const copy = require('recursive-copy')
-const { consts, template, xfs } = require('../utils')
+const { consts, template, sys } = require('../utils')
 
 const packages = {
   dependencies: [],
@@ -12,6 +12,10 @@ const packages = {
     'babel-jest',
     'babel-plugin-transform-class-properties',
     'babel-plugin-transform-decorators-legacy',
+    'babel-plugin-module-resolver',
+    'babel-preset-env',
+    'babel-preset-jest',
+    'cross-env',
     'eslint',
     'eslint-config-standard',
     'eslint-config-standard-react',
@@ -31,7 +35,7 @@ const createBasicApp = project => {
   const cwd = process.cwd()
   const dest = path.resolve(cwd, project)
 
-  xfs.createFolder(cwd, project)
+  sys.createFolder(cwd, project)
   copy(consts.templates, dest, consts.copyOptions).then(results => {
     fs.writeFileSync(
       path.resolve(dest, 'package.json'),
@@ -43,7 +47,10 @@ const createBasicApp = project => {
     )
     fs.unlinkSync(path.resolve(dest, 'package.json.hbs'))
 
-    xfs.install(packages.devDependencies, dest)
+    sys.execute('git', ['init'], { cwd: dest })
+    Object.keys(packages).forEach(key => {
+      sys.install(packages[key], dest)
+    })
   })
 }
 

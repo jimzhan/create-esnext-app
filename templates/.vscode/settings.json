@@ -2,5 +2,8 @@
   "editor.tabSize": 2,
   "[javascript]": {
     "editor.formatOnSave": true
+  },
+  "standard.options": {
+    "parser": "babel-eslint"
   }
 }
