@@ -7,6 +7,6 @@ const sys = require('./sys')
 module.exports = {
   consts,
   logger,
-  template,
-  sys
+  sys,
+  template
 }

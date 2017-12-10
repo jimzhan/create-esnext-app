@@ -1,13 +1,12 @@
 #!/usr/bin/env node
 const fs = require('fs')
 const path = require('path')
-const copy = require('recursive-copy')
+const copy = require('copy')
+const rcopy = require('recursive-copy')
 const { consts, template, sys } = require('../utils')
 
 const packages = {
-  dependencies: [
-    'axios'
-  ],
+  dependencies: ['axios'],
   devDependencies: [
     'babel-cli',
     'babel-eslint',
@@ -38,8 +37,6 @@ const packages = {
   ]
 }
 
-const vscodeSettings = path.resolve(consts.basedir, '.vscode')
-
 const createProject = (dest, project) => {
   fs.writeFileSync(
     path.resolve(dest, 'package.json'),
@@ -58,6 +55,12 @@ const createProject = (dest, project) => {
   })
 }
 
+const applySettings = dest => {
+  copy(consts.Settings, dest, err => {
+    logger.info('Project created')
+  })
+}
+
 const createBasicApp = project => {
   const cwd = process.cwd()
   const dest = path.resolve(cwd, project)
@@ -65,10 +68,9 @@ const createBasicApp = project => {
   sys.createFolder(cwd, project)
   sys.execute('npm', ['install', '-g', 'babel-eslint'])
 
-  copy(consts.templates, dest, consts.copyOptions)
-    .then(results => { createProject(dest, project) })
-    .then(() => copy(vscodeSettings, dest, consts.copyOptions))
-    .then(() => logger.info('Project completed'))
+  rcopy(consts.templates, dest, consts.copyOptions)
+    .then(() => createProject(dest, project))
+    .then(() => applySettings(dest))
 }
 
 module.exports = createBasicApp

@@ -14,9 +14,17 @@ const copyOptions = {
   dot: true
 }
 
+const Settings = [
+  '.vscode',
+  '.editorconfig',
+  '.gitignore',
+  'tsconfig.json'
+].map(item => path.resolve(consts.basedir, item))
+
 module.exports = {
   basedir,
   encoding,
   copyOptions,
-  templates
+  templates,
+  Settings
 }
