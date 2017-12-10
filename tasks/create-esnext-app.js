@@ -1,14 +1,14 @@
 #!/usr/bin/env node
-const ora = require('ora')
-const { logger } = require('../utils')
+const chalk = require('chalk')
 const createBasicApp = require('./create-basic-app')
 
 const createESNextApp = answers => {
   const project = answers.project
-  const spinner = ora(`Start creating ESNext application: ${project}\n`).start()
+  console.log(chalk`{green ●} Start creating ESNext application: ${project}`)
+
   switch (answers.template) {
     default:
-      createBasicApp(project, spinner)
+      createBasicApp(project)
   }
 }
 

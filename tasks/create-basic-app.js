@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 const fs = require('fs')
-const ora = require('ora')
 const path = require('path')
+const chalk = require('chalk')
 const copy = require('recursive-copy')
 const { consts, logger, template, sys } = require('../utils')
 
@@ -69,7 +69,7 @@ const applySettings = dest => {
     })
 }
 
-const createBasicApp = (project, spinner) => {
+const createBasicApp = project => {
   const cwd = process.cwd()
   const dest = path.resolve(cwd, project)
 
@@ -80,7 +80,9 @@ const createBasicApp = (project, spinner) => {
   copy(source, dest, consts.copyOptions)
     .then(() => createProject(dest, project))
     .then(() => applySettings(dest))
-    .then(() => spinner.stop())
+    .then(() =>
+      console.log(chalk`{blue ●} <Project: ${project}> has been created.`)
+    )
 }
 
 module.exports = createBasicApp
