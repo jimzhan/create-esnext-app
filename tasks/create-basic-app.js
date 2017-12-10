@@ -72,7 +72,8 @@ const createBasicApp = project => {
   sys.mkdir(dest)
   sys.execute('npm', ['install', '-g', 'babel-eslint'])
 
-  rcopy(consts.templates, dest, consts.copyOptions)
+  const src = path.resolve(consts.templates, 'basic')
+  rcopy(src, dest, consts.copyOptions)
     .then(() => createProject(dest, project))
     .then(() => applySettings(dest))
 }
