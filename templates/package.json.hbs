@@ -2,18 +2,7 @@
   "private": true,
   "name": "{{ project }}",
   "version": "{{ version }}",
-  "scripts": {
-    "precommit": "lint-staged",
-    "prebuild": "npm run clean",
-    "build": "babel src -d build",
-    "clean": "rimraf build",
-    "start": "per-env",
-    "start:development": "babel-node src/index.js",
-    "prestart:production": "npm run build",
-    "start:production": "node build/index.js",
-    "test": "per-env",
-    "test:development": "cross-env TIMEOUT=10000 jest --forceExit"
-  },
+  "<Settings>": "------------------------------ Foundation Settings ------------------------------",
   "babel": {
     "presets": ["env", "jest"],
     "plugins": [
@@ -66,5 +55,18 @@
     "transformIgnorePatterns": [
       "/node_modules/"
     ]
+  },
+  "</Settings>": "------------------------------ End of Foundation Settings ------------------------------",
+  "scripts": {
+    "precommit": "lint-staged",
+    "prebuild": "npm run clean",
+    "build": "babel src -d build",
+    "clean": "rimraf build",
+    "start": "per-env",
+    "start:development": "babel-node src/index.js",
+    "prestart:production": "npm run build",
+    "start:production": "node build/index.js",
+    "test": "per-env",
+    "test:development": "cross-env TIMEOUT=10000 jest --forceExit"
   }
 }
