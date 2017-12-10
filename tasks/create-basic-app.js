@@ -38,15 +38,17 @@ const packages = {
 }
 
 const createProject = (dest, project) => {
+  const pkg = path.resolve(dest, 'package.json.hbs')
+
   fs.writeFileSync(
     path.resolve(dest, 'package.json'),
-    template.compile(path.resolve('basic', 'package.json.hbs'), {
+    template.compile(pkg, {
       project,
       version: '0.1.0'
     }),
     consts.encoding
   )
-  fs.unlinkSync(path.resolve(dest, 'package.json.hbs'))
+  fs.unlinkSync(pkg)
   sys.execute('git', ['init'], { cwd: dest })
 
   // install project dependencies.
