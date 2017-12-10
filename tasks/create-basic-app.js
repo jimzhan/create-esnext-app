@@ -5,7 +5,9 @@ const copy = require('recursive-copy')
 const { consts, template, sys } = require('../utils')
 
 const packages = {
-  dependencies: [],
+  dependencies: [
+    'axios'
+  ],
   devDependencies: [
     'babel-cli',
     'babel-eslint',
