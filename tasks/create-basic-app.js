@@ -60,13 +60,7 @@ const createProject = (dest, project) => {
 const applySettings = dest => {
   const options = Object.assign(consts.copyOptions, { filter: ['**/*'] })
   const source = path.resolve(consts.templates, 'shared/')
-
-  copy(source, dest, options)
-    .then(() => logger.info(`Project created`))
-    .catch(err => {
-      logger.error(`Failed to apply settings: ${err.message}`)
-      process.exit(1)
-    })
+  return copy(source, dest, options)
 }
 
 const createBasicApp = project => {
