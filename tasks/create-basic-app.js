@@ -3,7 +3,7 @@ const fs = require('fs')
 const path = require('path')
 const copy = require('copy')
 const rcopy = require('recursive-copy')
-const { consts, template, sys } = require('../utils')
+const { consts, logger, template, sys } = require('../utils')
 
 const packages = {
   dependencies: ['axios'],
