@@ -1,6 +1,6 @@
 {
   "name": "create-esnext-app",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "description": "Create ESNext apps with no build configuration.",
   "main": "bootstrap.js",
   "bin": {
