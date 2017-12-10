@@ -19,7 +19,7 @@ const Settings = [
   '.editorconfig',
   '.gitignore',
   'tsconfig.json'
-].map(item => path.resolve(consts.basedir, item))
+].map(item => path.resolve(basedir, item))
 
 module.exports = {
   basedir,
