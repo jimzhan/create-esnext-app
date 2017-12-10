@@ -58,7 +58,7 @@ const createBasicApp = project => {
 
     sys.execute('git', ['init'], { cwd: dest })
     Object.keys(packages).forEach(key => {
-      sys.install(packages[key], dest)
+      sys.install(packages[key], dest, key === 'devDependencies')
     })
   })
 }
