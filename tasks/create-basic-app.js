@@ -1,8 +1,7 @@
 #!/usr/bin/env node
 const fs = require('fs')
 const path = require('path')
-const copy = require('copy')
-const rcopy = require('recursive-copy')
+const copy = require('recursive-copy')
 const { consts, logger, template, sys } = require('../utils')
 
 const packages = {
@@ -58,13 +57,15 @@ const createProject = (dest, project) => {
 }
 
 const applySettings = dest => {
-  copy(path.resolve(consts.templates, 'shared', '*'), dest, err => {
-    if (err) {
+  const options = Object.assign(consts.copyOptions, { filter: ['**/*'] })
+  const source = path.resolve(consts.templates, 'shared/')
+
+  copy(source, dest, options)
+    .then(() => logger.info(`Project created`))
+    .catch(err => {
       logger.error(`Failed to apply settings: ${err.message}`)
       process.exit(1)
-    }
-    logger.info(`Project created`)
-  })
+    })
 }
 
 const createBasicApp = project => {
@@ -74,8 +75,8 @@ const createBasicApp = project => {
   sys.mkdir(dest)
   sys.execute('npm', ['install', '-g', 'babel-eslint'])
 
-  const src = path.resolve(consts.templates, 'basic')
-  rcopy(src, dest, consts.copyOptions)
+  const source = path.resolve(consts.templates, 'basic')
+  copy(source, dest, consts.copyOptions)
     .then(() => createProject(dest, project))
     .then(() => applySettings(dest))
 }
