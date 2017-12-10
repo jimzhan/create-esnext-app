@@ -62,6 +62,7 @@
     "prebuild": "npm run clean",
     "build": "babel src -d build",
     "clean": "rimraf build",
+    "lint": "eslint --ext .jsx,.js src tests",
     "start": "per-env",
     "start:development": "babel-node src/index.js",
     "prestart:production": "npm run build",
