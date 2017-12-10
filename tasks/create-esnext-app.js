@@ -5,7 +5,7 @@ const createBasicApp = require('./create-basic-app')
 
 const createESNextApp = answers => {
   const project = answers.project
-  const spinner = ora('Start creating ESNext application: ${project}').start()
+  const spinner = ora(`Start creating ESNext application: ${project}\n`).start()
   switch (answers.template) {
     default:
       createBasicApp(project, spinner)
