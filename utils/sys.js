@@ -4,10 +4,10 @@ const mkdirp = require('mkdirp')
 const spawn = require('cross-spawn')
 const logger = require('./logger')
 
-const createFolder = (root, folder) => {
-  mkdirp(root, err => {
+const mkdir = abspath => {
+  mkdirp(abspath, err => {
     if (err) {
-      logger.error(`Failed to create <folder: ${folder}>: ${err.message}`)
+      logger.error(`Failed to create <folder: ${abspath}>: ${err.message}`)
       process.exit(1)
     }
   })
@@ -24,7 +24,7 @@ const install = (packages, cwd, forDev = true) => {
 }
 
 module.exports = {
-  createFolder,
   execute,
-  install
+  install,
+  mkdir
 }

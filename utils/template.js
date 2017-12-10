@@ -2,13 +2,13 @@
 const fs = require('fs')
 const path = require('path')
 const Handlebars = require('handlebars')
+const consts = require('./consts')
 
 const encoding = 'utf-8'
-const templates = path.resolve(__dirname, '..', 'templates')
+const templates = path.resolve(consts.basedir, 'templates')
 
-const compile = (filename, metadata = {}) => {
-  const filepath = path.resolve(templates, filename)
-  const content = fs.readFileSync(filepath, encoding)
+const compile = (filepath, metadata = {}) => {
+  const content = fs.readFileSync(path.resolve(templates, filepath), encoding)
   return Handlebars.compile(content)(metadata)
 }
 

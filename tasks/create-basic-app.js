@@ -40,7 +40,7 @@ const packages = {
 const createProject = (dest, project) => {
   fs.writeFileSync(
     path.resolve(dest, 'package.json'),
-    template.compile('package.json.hbs', {
+    template.compile(path.resolve('basic', 'package.json.hbs'), {
       project,
       version: '0.1.0'
     }),
@@ -56,8 +56,12 @@ const createProject = (dest, project) => {
 }
 
 const applySettings = dest => {
-  copy.each(consts.Settings, dest, err => {
-    logger.info('Project created')
+  copy(path.resolve(consts.templates, 'shared', '*'), dest, err => {
+    if (err) {
+      logger.error(`Failed to apply settings: ${err.message}`)
+      process.exit(1)
+    }
+    logger.info(`Project created`)
   })
 }
 
@@ -65,7 +69,7 @@ const createBasicApp = project => {
   const cwd = process.cwd()
   const dest = path.resolve(cwd, project)
 
-  sys.createFolder(cwd, project)
+  sys.mkdir(dest)
   sys.execute('npm', ['install', '-g', 'babel-eslint'])
 
   rcopy(consts.templates, dest, consts.copyOptions)
