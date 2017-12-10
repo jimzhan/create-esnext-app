@@ -11,7 +11,7 @@
     "start:development": "babel-node src/index.js",
     "prestart:production": "npm run build",
     "start:production": "node build/index.js",
-    "test": "per-env"
+    "test": "per-env",
     "test:development": "cross-env TIMEOUT=10000 jest --forceExit"
   },
   "babel": {
