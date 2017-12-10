@@ -20,6 +20,7 @@ const packages = {
     'eslint',
     'eslint-config-standard',
     'eslint-config-standard-react',
+    'eslint-plugin-html',
     'eslint-plugin-import',
     'eslint-plugin-jest',
     'eslint-plugin-node',
