@@ -11,7 +11,7 @@
     "start:development": "babel-node src/index.js",
     "prestart:production": "npm run build",
     "start:production": "node build/index.js",
-    "test": "cross-env TIMEOUT=10000 BABEL_ENV=testing jest --forceExit",
+    "test": "cross-env TIMEOUT=10000 BABEL_ENV=testing jest --forceExit"
   },
   "babel": {
     "presets": ["env", "jest"],
