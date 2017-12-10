@@ -15,6 +15,7 @@ const packages = {
     'babel-plugin-module-resolver',
     'babel-preset-env',
     'babel-preset-jest',
+    'babel-polyfill',
     'cross-env',
     'eslint',
     'eslint-config-standard',
