@@ -56,7 +56,7 @@ const createProject = (dest, project) => {
 }
 
 const applySettings = dest => {
-  copy(consts.Settings, dest, err => {
+  copy.each(consts.Settings, dest, err => {
     logger.info('Project created')
   })
 }
