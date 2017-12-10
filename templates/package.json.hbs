@@ -28,9 +28,15 @@
   "eslintConfig": {
     "root": true,
     "parser": "babel-eslint",
+    "env": {
+      "jest/globals": true
+    },
     "extends": [
       "standard",
       "standard-react"
+    ],
+    "plugins": [
+      "jest"
     ]
   },
   "lint-staged": {
@@ -47,7 +53,14 @@
     "globals": {
       "__DEV__": true
     },
+    "collectCoverageFrom": [
+      "!bootstrap.js",
+      "src/**/*.{js,jsx}"
+    ],
     "setupTestFrameworkScriptFile": "./tests/bootstrap.js",
-    "testRegex": "./tests/.*.spec.jsx?$"
+    "testRegex": "./test/.*.spec.jsx?$",
+    "transformIgnorePatterns": [
+      "/node_modules/"
+    ]
   }
 }
