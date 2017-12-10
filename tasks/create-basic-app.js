@@ -38,6 +38,26 @@ const packages = {
   ]
 }
 
+const vscodeSettings = path.resolve(consts.basedir, '.vscode')
+
+const createProject = (dest, project) => {
+  fs.writeFileSync(
+    path.resolve(dest, 'package.json'),
+    template.compile('package.json.hbs', {
+      project,
+      version: '0.1.0'
+    }),
+    consts.encoding
+  )
+  fs.unlinkSync(path.resolve(dest, 'package.json.hbs'))
+  sys.execute('git', ['init'], { cwd: dest })
+
+  // install project dependencies.
+  Object.keys(packages).forEach(key => {
+    sys.install(packages[key], dest, key === 'devDependencies')
+  })
+}
+
 const createBasicApp = project => {
   const cwd = process.cwd()
   const dest = path.resolve(cwd, project)
@@ -45,22 +65,10 @@ const createBasicApp = project => {
   sys.createFolder(cwd, project)
   sys.execute('npm', ['install', '-g', 'babel-eslint'])
 
-  copy(consts.templates, dest, consts.copyOptions).then(results => {
-    fs.writeFileSync(
-      path.resolve(dest, 'package.json'),
-      template.compile('package.json.hbs', {
-        project,
-        version: '0.1.0'
-      }),
-      consts.encoding
-    )
-    fs.unlinkSync(path.resolve(dest, 'package.json.hbs'))
-
-    sys.execute('git', ['init'], { cwd: dest })
-    Object.keys(packages).forEach(key => {
-      sys.install(packages[key], dest, key === 'devDependencies')
-    })
-  })
+  copy(consts.templates, dest, consts.copyOptions)
+    .then(results => { createProject(dest, project) })
+    .then(() => copy(vscodeSettings, dest, consts.copyOptions))
+    .then(() => logger.info('Project completed'))
 }
 
 module.exports = createBasicApp

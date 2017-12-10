@@ -30,7 +30,9 @@ inquirer
       type: 'list',
       name: 'template',
       message: 'Which template you need?',
-      choices: ['basic']
+      choices: [
+        { name: 'Basic - ESNext Biolerplate', value: 'basic' }
+      ]
     }
   ])
   .then(answers => {
