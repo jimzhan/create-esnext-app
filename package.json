@@ -6,10 +6,6 @@
   "bin": {
     "create-esnext-app": "./bootstrap.js"
   },
-  "scripts": {
-    "test": "node ./tests/index.js",
-    "semantic-release": "semantic-release pre && npm publish && semantic-release post"
-  },
   "repository": {
     "type": "git",
     "url": "https://github.com/jimzhan/create-esnext-app.git"
@@ -40,8 +36,5 @@
     "mkdirp": "^0.5.1",
     "recursive-copy": "^2.0.7",
     "validate-npm-package-name": "^3.0.0"
-  },
-  "devDependencies": {
-    "semantic-release": "^8.2.0"
   }
 }
