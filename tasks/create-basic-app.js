@@ -6,18 +6,18 @@ const copy = require('recursive-copy')
 const { consts, logger, project, template, sys } = require('../utils')
 const { Basic } = require('./packages')
 
-const createBasicApp = project => {
+const createBasicApp = name => {
   const cwd = process.cwd()
-  const dest = path.resolve(cwd, project)
+  const dest = path.resolve(cwd, name)
 
   sys.mkdir(dest)
 
   const source = path.resolve(consts.templates, 'basic')
   copy(source, dest, consts.copyOptions)
-    .then(() => project.create(dest, project, Basic))
+    .then(() => project.create(dest, name, Basic))
     .then(() => project.applySettings(dest))
     .then(() =>
-      console.log(chalk`{blue ●} <Project: ${project}> has been created.`)
+      console.log(chalk`{blue ●} <Project: ${name}> has been created.`)
     )
 }
 
