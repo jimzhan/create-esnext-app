@@ -17,10 +17,21 @@ const execute = (command, args, options = {}) => {
   spawn.sync(command, args, Object.assign({ stdio: 'inherit' }, options))
 }
 
-const install = (packages, cwd, forDev = true) => {
-  if (!lodash.isArray(packages)) return
-  const pkgType = forDev ? '--save-dev' : '--save'
-  execute('npm', ['install', pkgType].concat(packages), { cwd })
+const install = packages => {
+  Object.keys(packages).forEach(type => {
+    let scope
+    switch (type) {
+      case 'global':
+        scope = '--global'
+        break
+      case 'dependencies':
+        scope = '--save'
+        break
+      default:
+        scope = '--save-dev'
+    }
+    execute('npm', ['install', scope].concat(packages[key]), { cwd })
+  })
 }
 
 module.exports = {

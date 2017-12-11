@@ -19,11 +19,7 @@ const createProject = (dest, project) => {
   )
   fs.unlinkSync(pkg)
   sys.execute('git', ['init'], { cwd: dest })
-
-  // install project dependencies.
-  Object.keys(React).forEach(key => {
-    sys.install(React[key], dest, key === 'devDependencies')
-  })
+  sys.install(React)
 }
 
 const applySettings = dest => {
@@ -37,7 +33,6 @@ const createReactApp = project => {
   const dest = path.resolve(cwd, project)
 
   sys.mkdir(dest)
-  sys.execute('npm', ['install', '-g', 'babel-eslint', 'create-react-app'])
 
   const source = path.resolve(consts.templates, 'react')
   copy(source, dest, consts.copyOptions)

@@ -19,11 +19,7 @@ const createProject = (dest, project) => {
   )
   fs.unlinkSync(pkg)
   sys.execute('git', ['init'], { cwd: dest })
-
-  // install project dependencies.
-  Object.keys(Basic).forEach(key => {
-    sys.install(Basic[key], dest, key === 'devDependencies')
-  })
+  sys.install(Basic)
 }
 
 const applySettings = dest => {
@@ -37,7 +33,6 @@ const createBasicApp = project => {
   const dest = path.resolve(cwd, project)
 
   sys.mkdir(dest)
-  sys.execute('npm', ['install', '-g', 'babel-eslint'])
 
   const source = path.resolve(consts.templates, 'basic')
   copy(source, dest, consts.copyOptions)

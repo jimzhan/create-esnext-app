@@ -1,6 +1,6 @@
 #!/usr/bin/env node
-
 const Basic = {
+  global: ['babel-eslint'],
   dependencies: ['axios'],
   devDependencies: [
     'babel-cli',
@@ -33,7 +33,9 @@ const Basic = {
 }
 
 const React = {
+  global: Basic.global.concat(['create-react-app']),
   dependencies: Basic.dependencies.concat([
+    'antd',
     'react',
     'react-dom',
     'react-router-component',
@@ -41,7 +43,9 @@ const React = {
     'styled-components'
   ]),
   devDependencies: Basic.devDependencies.concat([
+    'babel-plugin-import',
     'react-app-rewire-eslint',
+    'react-app-rewire-less',
     'react-app-rewired'
   ])
 }
