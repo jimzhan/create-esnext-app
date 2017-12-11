@@ -1,5 +1,4 @@
 #!/usr/bin/env node
-const lodash = require('lodash')
 const mkdirp = require('mkdirp')
 const spawn = require('cross-spawn')
 const logger = require('./logger')
