@@ -17,7 +17,7 @@ const execute = (command, args, options = {}) => {
   spawn.sync(command, args, Object.assign({ stdio: 'inherit' }, options))
 }
 
-const install = packages => {
+const install = (packages, cwd) => {
   Object.keys(packages).forEach(type => {
     let scope
     switch (type) {

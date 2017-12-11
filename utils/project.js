@@ -17,7 +17,7 @@ const create = (dest, project, packages) => {
   )
   fs.unlinkSync(pkg)
   sys.execute('git', ['init'], { cwd: dest })
-  sys.install(packages)
+  sys.install(packages, dest)
 }
 
 const applySettings = dest => {
