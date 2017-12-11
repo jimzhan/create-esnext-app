@@ -31,7 +31,8 @@ inquirer
       name: 'template',
       message: 'Which template you need?',
       choices: [
-        { name: 'Basic - ESNext Biolerplate', value: 'basic' }
+        { name: 'Basic - ESNext Biolerplate', value: 'basic' },
+        { name: 'React - EXNext Biolerplate', value: 'react' }
       ]
     }
   ])

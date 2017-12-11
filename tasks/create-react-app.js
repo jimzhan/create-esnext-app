@@ -4,7 +4,7 @@ const path = require('path')
 const chalk = require('chalk')
 const copy = require('recursive-copy')
 const { consts, logger, template, sys } = require('../utils')
-const { Basic } = require('./packages')
+const { React } = require('./packages')
 
 const createProject = (dest, project) => {
   const pkg = path.resolve(dest, 'package.json.hbs')
@@ -21,8 +21,8 @@ const createProject = (dest, project) => {
   sys.execute('git', ['init'], { cwd: dest })
 
   // install project dependencies.
-  Object.keys(Basic).forEach(key => {
-    sys.install(Basic[key], dest, key === 'devDependencies')
+  Object.keys(React).forEach(key => {
+    sys.install(React[key], dest, key === 'devDependencies')
   })
 }
 
@@ -32,14 +32,14 @@ const applySettings = dest => {
   return copy(source, dest, options)
 }
 
-const createBasicApp = project => {
+const createReactApp = project => {
   const cwd = process.cwd()
   const dest = path.resolve(cwd, project)
 
   sys.mkdir(dest)
-  sys.execute('npm', ['install', '-g', 'babel-eslint'])
+  sys.execute('npm', ['install', '-g', 'babel-eslint', 'create-react-app'])
 
-  const source = path.resolve(consts.templates, 'basic')
+  const source = path.resolve(consts.templates, 'react')
   copy(source, dest, consts.copyOptions)
     .then(() => createProject(dest, project))
     .then(() => applySettings(dest))
@@ -48,4 +48,4 @@ const createBasicApp = project => {
     )
 }
 
-module.exports = createBasicApp
+module.exports = createReactApp
