@@ -3,6 +3,43 @@
   "version": "0.1.0",
   "description": "Create ESNext apps with no build configuration.",
   "main": "bootstrap.js",
+  "<Settings>": "------------------------------ Foundation Settings ------------------------------",
+  "babel": {
+    "presets": [
+      "env",
+      "jest"
+    ],
+    "plugins": [
+      "transform-class-properties",
+      "transform-decorators-legacy",
+      "transform-runtime",
+      [
+        "module-resolver",
+        {
+          "root": [
+            "./src"
+          ],
+          "alias": {
+            "tests": "./tests"
+          }
+        }
+      ]
+    ]
+  },
+  "eslintConfig": {
+    "root": true,
+    "parser": "babel-eslint",
+    "env": {
+      "jest/globals": true
+    },
+    "extends": [
+      "standard",
+      "standard-react"
+    ],
+    "plugins": [
+      "jest"
+    ]
+  },
   "bin": {
     "create-esnext-app": "./bootstrap.js"
   },
@@ -36,5 +73,14 @@
     "mkdirp": "^0.5.1",
     "recursive-copy": "^2.0.7",
     "validate-npm-package-name": "^3.0.0"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-eslint": "^8.0.3",
+    "eslint": "^4.13.0",
+    "eslint-config-standard": "^10.2.1",
+    "eslint-plugin-jest": "^21.4.2",
+    "eslint-plugin-standard": "^3.0.1",
+    "jest": "^21.2.1"
   }
 }

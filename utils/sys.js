@@ -30,7 +30,7 @@ const install = packages => {
       default:
         scope = '--save-dev'
     }
-    execute('npm', ['install', scope].concat(packages[key]), { cwd })
+    execute('npm', ['install', scope].concat(packages[type]), { cwd })
   })
 }
 
