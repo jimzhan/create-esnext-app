@@ -64,6 +64,7 @@
     "start:development": "react-app-rewired start",
     "prestart:production": "npm run build",
     "start:production": "node build/index.js",
+    "pretest": "rimraf coverage",
     "test": "react-app-rewired test --coverage --env=jsdom",
     "test:development": "cross-env TIMEOUT=10000 jest --forceExit"
   }
