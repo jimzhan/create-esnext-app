@@ -2,7 +2,7 @@
   "name": "create-esnext-app",
   "version": "0.1.0",
   "description": "Create ESNext apps with no build configuration.",
-  "main": "bootstrap.js",
+  "bin": "./index.js",
   "<Settings>": "------------------------------ Foundation Settings ------------------------------",
   "scripts": {
     "lint": "eslint --ext .js src"
@@ -40,9 +40,7 @@
       "jest"
     ]
   },
-  "bin": {
-    "create-esnext-app": "./bootstrap.js"
-  },
+  "</Settings>": "------------------------ End of Foundation Settings ------------------------------",
   "repository": {
     "type": "git",
     "url": "https://github.com/jimzhan/create-esnext-app.git"

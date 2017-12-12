@@ -43,16 +43,14 @@
     ]
   },
   "jest": {
+    "verbose": true,
     "collectCoverageFrom": [
       "!tests/bootstrap.js",
       "src/**/*.{js,jsx}"
     ],
-    "setupTestFrameworkScriptFile": "./tests/bootstrap.js",
+    "setupTestFrameworkScriptFile": "<rootDir>/tests/bootstrap.js",
     "testMatch": [
       "<rootDir>/tests/**/?(*.)(spec|test).{js,jsx}"
-    ],
-    "transformIgnorePatterns": [
-      "/node_modules/"
     ]
   },
   "</Settings>": "------------------------ End of Foundation Settings ------------------------------",
