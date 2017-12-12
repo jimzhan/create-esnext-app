@@ -1,17 +1,18 @@
 const fs = require('fs')
 const path = require('path')
+const chalk = require('chalk')
 const copy = require('recursive-copy')
 
 const consts = require('./consts')
 const sys = require('./sys')
 const template = require('./template')
 
-const create = (dest, project, packages) => {
+const initialize = (dest, name, packages) => {
   const pkg = path.resolve(dest, 'package.json.hbs')
   fs.writeFileSync(
     path.resolve(dest, 'package.json'),
     template.compile(pkg, {
-      project,
+      name,
       version: '0.1.0'
     }),
     consts.encoding
@@ -27,7 +28,21 @@ const applySettings = dest => {
   return copy(source, dest, options)
 }
 
+const create = (name, packages) => {
+  const cwd = process.cwd()
+  const dest = path.resolve(cwd, name)
+
+  sys.mkdir(dest)
+
+  const source = path.resolve(consts.templates, 'react')
+  copy(source, dest, consts.copyOptions)
+    .then(() => initialize(dest, name, packages))
+    .then(() => applySettings(dest))
+    .then(() =>
+      console.log(chalk`{blue ● <Project: ${name}> has been created.}`)
+    )
+}
+
 module.exports = {
-  create,
-  applySettings
+  create
 }

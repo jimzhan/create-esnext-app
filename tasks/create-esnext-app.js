@@ -1,20 +1,20 @@
 #!/usr/bin/env node
 const chalk = require('chalk')
-const createBasicApp = require('./create-basic-app')
-const createReactApp = require('./create-react-app')
+const project = require('../src')
+const { Basic, React } = require('./packages')
 
 const createESNextApp = answers => {
-  const project = answers.project
+  const name = answers.name
   console.log(
     chalk`{green ●} Start creating ESNext application <type: ${answers.template}>: ${project}`
   )
 
   switch (answers.template) {
     case 'react':
-      createReactApp(project)
+      project.create(name, React)
       break
     default:
-      createBasicApp(project)
+      project.create(name, Basic)
   }
 }
 

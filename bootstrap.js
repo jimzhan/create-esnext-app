@@ -4,9 +4,10 @@ const validateProjectName = require('validate-npm-package-name')
 const currentNodeVer = process.versions.node
 const major = currentNodeVer.split('.')[0]
 
-const requiredVer = 8
+const { logger } = require('./src')
 const createESNextApp = require('./tasks/create-esnext-app')
-const { logger } = require('./utils')
+
+const requiredVer = 8
 
 if (major < requiredVer) {
   logger.error(
@@ -23,7 +24,7 @@ inquirer
   .prompt([
     {
       type: 'input',
-      name: 'project',
+      name: 'name',
       message: 'Please provide your project name:'
     },
     {
@@ -32,7 +33,7 @@ inquirer
       message: 'Which template you need?',
       choices: [
         { name: 'Basic - ESNext Biolerplate', value: 'basic' },
-        { name: 'React - EXNext Biolerplate', value: 'react' }
+        { name: 'React + AntD Biolerplate', value: 'react' }
       ]
     }
   ])

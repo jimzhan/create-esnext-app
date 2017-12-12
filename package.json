@@ -5,7 +5,7 @@
   "main": "bootstrap.js",
   "<Settings>": "------------------------------ Foundation Settings ------------------------------",
   "scripts": {
-    "lint": "eslint --ext .js utils"
+    "lint": "eslint --ext .js src"
   },
   "babel": {
     "presets": [
