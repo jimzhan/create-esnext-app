@@ -12,7 +12,9 @@ const Basic = {
     'babel-plugin-module-resolver',
     'babel-preset-env',
     'babel-preset-jest',
+    'commitizen',
     'cross-env',
+    'cz-conventional-changelog',
     'eslint',
     'eslint-config-standard',
     'eslint-config-standard-react',
@@ -28,7 +30,8 @@ const Basic = {
     'lint-staged',
     'per-env',
     'prettier-standard',
-    'rimraf'
+    'rimraf',
+    'validate-commit-msg'
   ]
 }
 
