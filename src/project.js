@@ -28,13 +28,13 @@ const applySettings = dest => {
   return copy(source, dest, options)
 }
 
-const create = (name, packages) => {
+const create = (name, template, packages) => {
   const cwd = process.cwd()
   const dest = path.resolve(cwd, name)
 
   sys.mkdir(dest)
 
-  const source = path.resolve(consts.templates, 'react')
+  const source = path.resolve(consts.templates, template)
   copy(source, dest, consts.copyOptions)
     .then(() => initialize(dest, name, packages))
     .then(() => applySettings(dest))

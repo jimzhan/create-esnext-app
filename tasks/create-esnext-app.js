@@ -4,19 +4,17 @@ const { project } = require('../src')
 const { Basic, React } = require('./packages')
 
 const createESNextApp = answers => {
-  const name = answers.name
+  const { name, template } = answers
   console.log(
-    chalk`{green ●} Start creating ESNext application <type: ${answers.template}>: ${name}`
+    chalk`{green ●} Start creating ESNext application <type: ${template}>: ${name}`
   )
-
-  console.log(project, project.create)
 
   switch (answers.template) {
     case 'react':
-      project.create(name, React)
+      project.create(name, template, React)
       break
     default:
-      project.create(name, Basic)
+      project.create(name, template, Basic)
   }
 }
 
