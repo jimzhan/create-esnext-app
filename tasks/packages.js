@@ -45,9 +45,11 @@ const React = {
   ]),
   devDependencies: Basic.devDependencies.concat([
     'babel-plugin-import',
+    'babel-preset-react',
     'react-app-rewire-eslint',
     'react-app-rewire-less',
-    'react-app-rewired'
+    'react-app-rewired',
+    'react-test-renderer'
   ])
 }
 
