@@ -55,7 +55,9 @@
       "src/**/*.{js,jsx}"
     ],
     "setupTestFrameworkScriptFile": "./tests/bootstrap.js",
-    "testRegex": "./tests/.*.spec.jsx?$",
+    "testMatch": [
+      "<rootDir>/tests/**/?(*.)(spec|test).{js,jsx}"
+    ],
     "transformIgnorePatterns": [
       "/node_modules/"
     ]
