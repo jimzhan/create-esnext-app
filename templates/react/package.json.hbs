@@ -43,7 +43,6 @@
     ]
   },
   "jest": {
-    "verbose": true,
     "collectCoverageFrom": [
       "!tests/bootstrap.js",
       "src/**/*.{js,jsx}"
@@ -65,7 +64,7 @@
     "prestart:production": "npm run build",
     "start:production": "node build/index.js",
     "pretest": "rimraf coverage",
-    "test": "react-app-rewired test --coverage --env=jsdom",
-    "test:development": "cross-env TIMEOUT=10000 jest --forceExit"
+    "test": "cross-env NODE_ENV=test react-scripts test --coverage --env=jsdom",
+    "test:rewired": "cross-env NODE_ENV=test react-app-rewired test --coverage --env=jsdom"
   }
 }

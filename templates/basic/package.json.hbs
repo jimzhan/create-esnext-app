@@ -39,21 +39,13 @@
     ]
   },
   "jest": {
-    "rootDir": ".",
-    "transform": {
-      ".*": "<rootDir>/node_modules/babel-jest"
-    },
-    "globals": {
-      "__DEV__": true
-    },
     "collectCoverageFrom": [
       "!tests/bootstrap.js",
       "src/**/*.{js,jsx}"
     ],
     "setupTestFrameworkScriptFile": "./tests/bootstrap.js",
-    "testRegex": "./tests/.*.spec.jsx?$",
-    "transformIgnorePatterns": [
-      "/node_modules/"
+    "testMatch": [
+      "<rootDir>/tests/**/?(*.)(spec|test).{js,jsx}"
     ]
   },
   "</Settings>": "------------------------ End of Foundation Settings ------------------------------",
@@ -67,7 +59,6 @@
     "start:development": "babel-node src/index.js",
     "prestart:production": "npm run build",
     "start:production": "node build/index.js",
-    "test": "per-env",
-    "test:development": "cross-env TIMEOUT=10000 jest --forceExit"
+    "test": "cross-env NODE_ENV=test TIMEOUT=10000 jest --forceExit"
   }
 }
