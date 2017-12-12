@@ -71,7 +71,7 @@
     "start:development": "react-app-rewired start",
     "prestart:production": "npm run build",
     "start:production": "node build/index.js",
-    "test": "react-app-rewired test --env=jsdom",
+    "test": "react-app-rewired test --coverage --env=jsdom",
     "test:development": "cross-env TIMEOUT=10000 jest --forceExit"
   }
 }

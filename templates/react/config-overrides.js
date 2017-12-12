@@ -9,6 +9,16 @@ module.exports = function override (config, env) {
     ['import', { libraryName: 'antd', style: true }],
     config
   )
+  config = injectBabelPlugin(
+    [
+      'module-resolver',
+      {
+        root: ['./src'],
+        alias: { tests: './tests' }
+      }
+    ],
+    config
+  )
   /* Customize global AntD styles here. */
   config = rewireLess.withLoaderOptions({
     modifyVars: {}
