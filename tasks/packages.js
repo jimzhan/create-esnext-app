@@ -36,6 +36,7 @@ const React = {
   global: Basic.global.concat(['create-react-app']),
   dependencies: Basic.dependencies.concat([
     'antd',
+    'ant-design-pro',
     'react',
     'react-dom',
     'react-router-component',
