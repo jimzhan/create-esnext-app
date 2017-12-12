@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 const chalk = require('chalk')
-const project = require('../src')
+const { project } = require('../src')
 const { Basic, React } = require('./packages')
 
 const createESNextApp = answers => {
@@ -8,6 +8,8 @@ const createESNextApp = answers => {
   console.log(
     chalk`{green ●} Start creating ESNext application <type: ${answers.template}>: ${name}`
   )
+
+  console.log(project, project.create)
 
   switch (answers.template) {
     case 'react':
