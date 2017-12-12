@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 const chalk = require('chalk')
-const { project } = require('../src')
+const { project } = require('../lib')
 const { Basic, React } = require('./packages')
 
 const createESNextApp = answers => {

@@ -4,7 +4,7 @@ const validateProjectName = require('validate-npm-package-name')
 const currentNodeVer = process.versions.node
 const major = currentNodeVer.split('.')[0]
 
-const { logger } = require('./src')
+const { logger } = require('./lib')
 const createESNextApp = require('./tasks/create-esnext-app')
 
 const requiredVer = 8
