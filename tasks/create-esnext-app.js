@@ -6,7 +6,7 @@ const { Basic, React } = require('./packages')
 const createESNextApp = answers => {
   const name = answers.name
   console.log(
-    chalk`{green ●} Start creating ESNext application <type: ${answers.template}>: ${project}`
+    chalk`{green ●} Start creating ESNext application <type: ${answers.template}>: ${name}`
   )
 
   switch (answers.template) {
