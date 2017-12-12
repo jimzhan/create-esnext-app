@@ -6,6 +6,7 @@
   "bin": "index.js",
   "<Settings>": "------------------------------ Foundation Settings ------------------------------",
   "scripts": {
+    "prepush": "apv update build",
     "lint": "eslint --ext .js lib"
   },
   "babel": {
@@ -73,6 +74,7 @@
     "validate-npm-package-name": "^3.0.0"
   },
   "devDependencies": {
+    "appversion": "^1.7.1",
     "babel-cli": "^6.26.0",
     "babel-eslint": "^8.0.3",
     "eslint": "^4.13.0",
