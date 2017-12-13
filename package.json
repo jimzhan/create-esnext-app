@@ -6,6 +6,9 @@
   "bin": "index.js",
   "<Settings>": "------------------------------ Foundation Settings ------------------------------",
   "scripts": {
+    "precommit": "lint-staged",
+    "commit": "git-cz",
+    "commitmsg": "commitlint -e $GIT_PARAMS",
     "lint": "eslint --ext .js lib"
   },
   "babel": {
@@ -30,6 +33,16 @@
       ]
     ]
   },
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ]
+  },
+  "config": {
+    "commitizen": {
+      "path": "cz-conventional-changelog"
+    }
+  },
   "eslintConfig": {
     "root": true,
     "parser": "babel-eslint",
@@ -39,6 +52,12 @@
     "extends": "standard",
     "plugins": [
       "jest"
+    ]
+  },
+  "lint-staged": {
+    "src/**/*.{js,jsx,css,less,scss}": [
+      "prettier-standard",
+      "git add"
     ]
   },
   "</Settings>": "------------------------ End of Foundation Settings ------------------------------",
@@ -73,8 +92,12 @@
     "validate-npm-package-name": "^3.0.0"
   },
   "devDependencies": {
+    "@commitlint/cli": "^5.2.5",
+    "@commitlint/config-conventional": "^5.2.3",
     "babel-cli": "^6.26.0",
     "babel-eslint": "^8.0.3",
+    "commitizen": "^2.9.6",
+    "cz-conventional-changelog": "^2.1.0",
     "eslint": "^4.13.0",
     "eslint-config-standard": "^10.2.1",
     "eslint-plugin-import": "^2.8.0",
@@ -82,6 +105,7 @@
     "eslint-plugin-node": "^5.2.1",
     "eslint-plugin-promise": "^3.6.0",
     "eslint-plugin-standard": "^3.0.1",
-    "jest": "^21.2.1"
+    "jest": "^21.2.1",
+    "prettier-standard": "^7.0.3"
   }
 }

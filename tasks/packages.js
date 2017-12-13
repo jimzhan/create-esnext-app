@@ -32,7 +32,7 @@ const Basic = {
     'per-env',
     'prettier-standard',
     'rimraf',
-    'validate-commit-msg'
+    '@commitlint/{config-conventional,cli}'
   ]
 }
 
