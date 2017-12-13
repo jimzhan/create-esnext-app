@@ -5,12 +5,6 @@
   "main": "lib/index.js",
   "bin": "index.js",
   "<Settings>": "------------------------------ Foundation Settings ------------------------------",
-  "scripts": {
-    "precommit": "lint-staged",
-    "commit": "git-cz",
-    "commitmsg": "commitlint -e $GIT_PARAMS",
-    "lint": "eslint --ext .js lib"
-  },
   "babel": {
     "presets": [
       "env",
@@ -61,6 +55,12 @@
     ]
   },
   "</Settings>": "------------------------ End of Foundation Settings ------------------------------",
+  "scripts": {
+    "precommit": "lint-staged",
+    "commit": "git-cz",
+    "commitmsg": "commitlint -e $GIT_PARAMS",
+    "lint": "eslint --ext .js lib"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/jimzhan/create-esnext-app.git"
@@ -88,8 +88,7 @@
     "inquirer": "^4.0.1",
     "lint-staged": "^6.0.0",
     "mkdirp": "^0.5.1",
-    "recursive-copy": "^2.0.7",
-    "validate-npm-package-name": "^3.0.0"
+    "recursive-copy": "^2.0.7"
   },
   "devDependencies": {
     "@commitlint/cli": "^5.2.5",
