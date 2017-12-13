@@ -38,8 +38,8 @@ create-esnext-app
   * [Decorators](https://github.com/loganfsmyth/babel-plugin-transform-decorators-legacy)
   * [Babel Env](https://github.com/babel/babel/tree/master/packages/babel-preset-env)
   * [Babel Jest](https://github.com/facebook/jest/tree/master/packages/babel-jest)
-  * [Module Resolver](https://github.com/tleunen/babel-plugin-module-resolver) for `src` and `tests`
-* [Commitizen](https://github.com/commitizen/cz-cli) for better commit message (via `npm run commit`)
+  * [Module Resolver](https://github.com/tleunen/babel-plugin-module-resolver) for `src`.
+* [Commitizen](https://github.com/commitizen/cz-cli) for better commit message (via `npm run commit`).
   * [Conventional Changelog](https://github.com/commitizen/cz-conventional-changelog) as commit message template.
   * [CommitLint](https://github.com/marionebl/commitlint) as commit message format validator (via `commitmsg` hook provided by `husky`)
 * [ESLint](https://github.com/eslint/eslint) with:
