@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 const chalk = require('chalk')
 const { project } = require('../lib')
-const { Basic, React } = require('./packages')
+const { Basic } = require('./packages')
 
 const createESNextApp = answers => {
   const { name, template } = answers
@@ -10,9 +10,6 @@ const createESNextApp = answers => {
   )
 
   switch (answers.template) {
-    case 'react':
-      project.create(name, template, React)
-      break
     default:
       project.create(name, template, Basic)
   }
