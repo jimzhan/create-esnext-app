@@ -59,8 +59,7 @@
     "precommit": "lint-staged",
     "commit": "git-cz",
     "commitmsg": "commitlint -e $GIT_PARAMS",
-    "lint": "eslint --ext .js lib",
-    "semantic-release": "semantic-release pre && npm publish && semantic-release post"
+    "lint": "eslint --ext .js lib"
   },
   "repository": {
     "type": "git",
