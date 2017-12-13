@@ -12,6 +12,7 @@ const Basic = {
     'babel-plugin-module-resolver',
     'babel-preset-env',
     'babel-preset-jest',
+    'babel-preset-react',
     'commitizen',
     'cross-env',
     'cz-conventional-changelog',
@@ -48,7 +49,6 @@ const React = {
   ]),
   devDependencies: Basic.devDependencies.concat([
     'babel-plugin-import',
-    'babel-preset-react',
     'react-app-rewire-eslint',
     'react-app-rewire-less',
     'react-app-rewired',

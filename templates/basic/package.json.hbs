@@ -6,7 +6,8 @@
   "babel": {
     "presets": [
       "env",
-      "jest"
+      "jest",
+      "react"
     ],
     "plugins": [
       "transform-class-properties",
@@ -69,7 +70,7 @@
       "!tests/bootstrap.js",
       "src/**/*.{js,jsx}"
     ],
-    "setupTestFrameworkScriptFile": "./tests/bootstrap.js",
+    "setupTestFrameworkScriptFile": "<rootDir>/tests/bootstrap.js",
     "testMatch": [
       "<rootDir>/tests/**/?(*.)(spec|test).{js,jsx}"
     ]

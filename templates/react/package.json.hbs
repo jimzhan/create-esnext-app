@@ -21,6 +21,29 @@
       }]
     ]
   },
+  "config": {
+    "commitizen": {
+      "path": "cz-conventional-changelog"
+    },
+    "validate-commit-msg": {
+      "types": [
+        "feat",
+        "fix",
+        "docs",
+        "style",
+        "refactor",
+        "perf",
+        "test",
+        "chore",
+        "revert"
+      ],
+      "warnOnFail": false,
+      "maxSubjectLength": 100,
+      "subjectPattern": "^[A-Z]+-[0-9]+ - .*",
+      "subjectPatternErrorMsg": "Subject must be in format 'CMS-123 - Commit message'",
+      "helpMessage": ""
+    }
+  },
   "eslintConfig": {
     "root": true,
     "parser": "babel-eslint",
@@ -56,6 +79,8 @@
   "scripts": {
     "precommit": "lint-staged",
     "prebuild": "npm run clean",
+    "commit": "git-cz",
+    "commitmsg": "validate-commit-msg",
     "build": "react-app-rewired build",
     "clean": "rimraf build",
     "lint": "eslint --ext .jsx,.js src tests",
