@@ -50,6 +50,8 @@ const React = {
   ]),
   devDependencies: Basic.devDependencies.concat([
     'babel-plugin-import',
+    'enzyme',
+    'jest-enzyme',
     'react-app-rewire-eslint',
     'react-app-rewire-less',
     'react-app-rewired',
