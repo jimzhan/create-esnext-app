@@ -17,6 +17,12 @@ Node application boilerplates built upon Babel.
 npm install -g create-esnext-app
 ```
 
+## Update
+
+```sh
+npm update -g create-esnext-app
+```
+
 ## Create Biolerplate
 
 ```sh
@@ -25,7 +31,7 @@ create-esnext-app
 
 ## Templates
 
-###  Basic - ESNext Biolerplate
+###  Basic - ESNext Boilerplate
 
 * [Babel](https://babeljs.io/) settings with supports includes:
   * [Class properties](https://babeljs.io/docs/plugins/transform-class-properties/)
@@ -45,3 +51,5 @@ create-esnext-app
   * [VSCode](https://code.visualstudio.com/) supports.
 * [Husky](https://github.com/typicode/husky) for GIT hooks.
 * [per-env](https://github.com/ericclemmons/per-env) for npm scripts.
+
+### [ ] React + AntD Boilerplate

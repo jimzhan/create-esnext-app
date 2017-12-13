@@ -32,8 +32,8 @@ inquirer
       name: 'template',
       message: 'Which template you need?',
       choices: [
-        { name: 'Basic - ESNext Biolerplate', value: 'basic' }
-        // { name: 'React + AntD Biolerplate', value: 'react' }
+        { name: 'Basic - ESNext Boilerplate', value: 'basic' }
+        // { name: 'React + AntD Boilerplate', value: 'react' }
       ]
     }
   ])
