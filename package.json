@@ -6,7 +6,6 @@
   "bin": "index.js",
   "<Settings>": "------------------------------ Foundation Settings ------------------------------",
   "scripts": {
-    "prepush": "apv update build",
     "lint": "eslint --ext .js lib"
   },
   "babel": {
