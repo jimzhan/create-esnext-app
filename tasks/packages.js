@@ -32,7 +32,8 @@ const Basic = {
     'per-env',
     'prettier-standard',
     'rimraf',
-    '@commitlint/{config-conventional,cli}'
+    '@commitlint/cli',
+    '@commitlint/config-conventional'
   ]
 }
 
