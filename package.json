@@ -59,7 +59,14 @@
     "precommit": "lint-staged",
     "commit": "git add . && git-cz",
     "commitmsg": "commitlint -e $GIT_PARAMS",
-    "lint": "eslint --ext .js lib"
+    "lint": "eslint --ext .js lib",
+    "<Version>": "======= Semantic Versioning =======",
+    "patch": "npm version patch",
+    "postpatch": "npm run push",
+    "minor": "npm version minor",
+    "postminor": "npm run push",
+    "push": "git push --follow-tags origin master && npm publish",
+    "</Version>": "======= Semantic Versioning ======="
   },
   "repository": {
     "type": "git",
