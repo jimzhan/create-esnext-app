@@ -49,6 +49,14 @@ create-esnext-app
 * [Husky](https://github.com/typicode/husky) for GIT hooks.
 * [per-env](https://github.com/ericclemmons/per-env) for npm scripts.
 
+
+### Fastify Server Boilerplate
+
+* Foundation extended from [Basic](#basic---esnext-boilerplate).
+* [Fastify](https://github.com/fastify/fastify) - An modern efficient server.
+* [Convict](https://github.com/mozilla/node-convict) - expands on the standard pattern of configuring.
+
+
 ### React + AntD Boilerplate
 
 * Foundation extended from [Basic](#basic---esnext-boilerplate).

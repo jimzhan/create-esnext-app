@@ -19,7 +19,7 @@ if (major < requiredVer) {
   process.exit(1)
 }
 
-const { Basic, React } = packages
+const { Basic, Fastify, React } = packages
 
 const createESNextApp = answers => {
   const { name, template } = answers
@@ -28,6 +28,9 @@ const createESNextApp = answers => {
   )
 
   switch (answers.template) {
+    case 'fastify':
+      project.create(name, template, Fastify)
+      break
     case 'react':
       project.create(name, template, React)
       break
@@ -49,6 +52,7 @@ inquirer
       message: 'Which template you need?',
       choices: [
         { name: 'Basic - ESNext Boilerplate', value: 'basic' },
+        { name: 'Fastify - Server Boilerplate', value: 'fastify' },
         { name: 'React + AntD Boilerplate', value: 'react' }
       ]
     }

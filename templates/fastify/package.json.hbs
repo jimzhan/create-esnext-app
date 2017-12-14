@@ -1,0 +1,78 @@
+{
+  "private": true,
+  "name": "{{ name }}",
+  "version": "{{ version }}",
+  "<Settings>": "------------------------------ Foundation Settings ------------------------------",
+  "babel": {
+    "presets": [
+      "env",
+      "jest",
+      "react"
+    ],
+    "plugins": [
+      "transform-decorators-legacy",
+      "transform-class-properties",
+      "transform-runtime",
+      ["module-resolver", {
+        "root": ["./src"]
+      }]
+    ]
+  },
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ]
+  },
+  "config": {
+    "commitizen": {
+      "path": "cz-conventional-changelog"
+    }
+  },
+  "eslintConfig": {
+    "root": true,
+    "parser": "babel-eslint",
+    "env": {
+      "jest/globals": true
+    },
+    "extends": [
+      "standard",
+      "standard-react"
+    ],
+    "plugins": [
+      "html",
+      "jest"
+    ]
+  },
+  "lint-staged": {
+    "src/**/*.{js,jsx,css,less,scss}": [
+      "prettier-standard",
+      "git add"
+    ]
+  },
+  "jest": {
+    "collectCoverageFrom": [
+      "!src/__tests__/bootstrap.js",
+      "src/**/*.{js,jsx}"
+    ],
+    "setupTestFrameworkScriptFile": "<rootDir>/src/__tests__/bootstrap.js",
+    "testPathIgnorePatterns": [
+      "/node_modules/",
+      "<rootDir>/src/__tests__/bootstrap.js"
+    ]
+  },
+  "</Settings>": "------------------------ End of Foundation Settings ------------------------------",
+  "scripts": {
+    "precommit": "lint-staged",
+    "prebuild": "npm run clean",
+    "commit": "git add . && git-cz",
+    "commitmsg": "commitlint -e $GIT_PARAMS",
+    "build": "babel src -d build",
+    "clean": "rimraf build",
+    "lint": "eslint --ext .jsx,.js src tests",
+    "start": "per-env",
+    "start:development": "cross-env NODE_ENV=development babel-node src/index.js",
+    "prestart:production": "npm run build",
+    "start:production": "cross-env NODE_ENV=production node build/index.js",
+    "test": "cross-env NODE_ENV=test TIMEOUT=10000 jest --forceExit"
+  }
+}
