@@ -57,7 +57,7 @@
   "</Settings>": "------------------------ End of Foundation Settings ------------------------------",
   "scripts": {
     "precommit": "lint-staged",
-    "commit": "git-cz",
+    "commit": "git add . && git-cz",
     "commitmsg": "commitlint -e $GIT_PARAMS",
     "lint": "eslint --ext .js lib"
   },
