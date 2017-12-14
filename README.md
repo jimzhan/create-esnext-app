@@ -61,4 +61,4 @@ create-esnext-app
   - [JavaScript Standard Style](https://marketplace.visualstudio.com/items?itemName=chenxsan.vscode-standardjs)
   - [Prettier-Standard](https://marketplace.visualstudio.com/items?itemName=numso.prettier-standard-vscode)
 * Workspace settings (via `.vscode/settings.json`).
-* Chrome based debugger (via `.vscode/launch.json`,  is required).
+* Chrome based debugger (via `.vscode/launch.json`).
