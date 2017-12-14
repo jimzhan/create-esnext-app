@@ -1,6 +1,6 @@
 # create-esnext-app
 
-Create ESNext apps with no build configuration.
+Opinionated ESNext application boilerplate generator.
 
 [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 [![Styled with Prettier](https://img.shields.io/badge/styled_with-prettier-ff69b4.svg)](https://github.com/prettier/prettier)
@@ -47,7 +47,18 @@ create-esnext-app
 * [Jest](https://github.com/facebook/jest) with:
   * Bootstrap supports (via `tests/bootstrap`).
   * [VSCode](https://code.visualstudio.com/) supports.
+* [Prettier](https://github.com/prettier/prettier) for code formatting (`precommit` and `VSCode`).
 * [Husky](https://github.com/typicode/husky) for GIT hooks.
 * [per-env](https://github.com/ericclemmons/per-env) for npm scripts.
 
 ### [ ] React + AntD Boilerplate
+
+
+## VSCode Supports (Optional)
+* Required Extensions:
+  - [Debugger for Chrome](https://marketplace.visualstudio.com/items?itemName=msjsdiag.debugger-for-chrome)
+  - [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
+  - [JavaScript Standard Style](https://marketplace.visualstudio.com/items?itemName=chenxsan.vscode-standardjs)
+  - [Prettier-Standard](https://marketplace.visualstudio.com/items?itemName=numso.prettier-standard-vscode)
+* Workspace settings (via `.vscode/settings.json`).
+* Chrome based debugger (via `.vscode/launch.json`,  is required).
