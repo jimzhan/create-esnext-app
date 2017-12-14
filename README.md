@@ -49,7 +49,13 @@ create-esnext-app
 * [Husky](https://github.com/typicode/husky) for GIT hooks.
 * [per-env](https://github.com/ericclemmons/per-env) for npm scripts.
 
-### [ ] React + AntD Boilerplate
+### React + AntD Boilerplate
+
+* Foundation extended from [Basic](#basic---esnext-boilerplate).
+* [create-react-app](https://github.com/facebookincubator/create-react-app) based React boilerplate.
+* [react-app-rewired](https://github.com/timarney/react-app-rewired) for tweaking the `CRA` webpack config(s) without ejecting.
+* [Enzyme](https://github.com/airbnb/enzyme) testing utilities for React.
+* [Ant Design](https://github.com/ant-design/ant-design/) An enterprise-class UI design language and React-based implementation.
 
 
 ## VSCode Supports (Optional)
