@@ -9,6 +9,12 @@ Opinionated ESNext application boilerplate generator.
 [![npm downloads](https://img.shields.io/npm/dt/create-esnext-app.svg)](https://www.npmjs.com/package/create-esnext-app)
 [![dependencies](https://david-dm.org/jimzhan/create-esnext-app.svg)](https://david-dm.org/jimzhan/create-esnext-app.svg)
 
+## Supported Templates 
+
+* [Basic](#basic---esnext-boilerplate) - Foundation of every ESNext based application.
+* [Fastify](#fastify-server-boilerplate) - Fastify based API server template.
+* [React](#react--antd-boilerplate) - React based template (without configuration needed).
+
 ## Installation
 
 ```sh

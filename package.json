@@ -1,7 +1,7 @@
 {
   "name": "create-esnext-app",
   "version": "0.3.0",
-  "description": "Create ESNext apps with no build configuration.",
+  "description": "Opinionated ESNext application boilerplate generator.",
   "main": "lib/index.js",
   "bin": "index.js",
   "<Settings>": "------------------------------ Foundation Settings ------------------------------",
@@ -92,8 +92,7 @@
     "inquirer": "^4.0.1",
     "lint-staged": "^6.0.0",
     "mkdirp": "^0.5.1",
-    "recursive-copy": "^2.0.7",
-    "validate-npm-package-name": "^3.0.0"
+    "recursive-copy": "^2.0.7"
   },
   "devDependencies": {
     "@commitlint/cli": "^5.2.5",
