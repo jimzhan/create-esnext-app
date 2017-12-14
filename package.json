@@ -92,7 +92,8 @@
     "inquirer": "^4.0.1",
     "lint-staged": "^6.0.0",
     "mkdirp": "^0.5.1",
-    "recursive-copy": "^2.0.7"
+    "recursive-copy": "^2.0.7",
+    "validate-npm-package-name": "^3.0.0"
   },
   "devDependencies": {
     "@commitlint/cli": "^5.2.5",
