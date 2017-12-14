@@ -14,10 +14,7 @@
       "transform-class-properties",
       "transform-runtime",
       ["module-resolver", {
-        "root": ["./src"],
-        "alias": {
-          "tests": "./tests"
-        }
+        "root": ["./src"]
       }]
     ]
   },
@@ -49,7 +46,7 @@
   "lint-staged": {
     "src/**/*.{js,jsx,css,less,scss}": [
       "prettier-standard",
-      "git add"
+      "git add ."
     ]
   },
   "jest": {
@@ -57,7 +54,11 @@
       "!src/__tests__/bootstrap.js",
       "src/**/*.{js,jsx}"
     ],
-    "setupTestFrameworkScriptFile": "<rootDir>/src/__tests__/bootstrap.js"
+    "setupTestFrameworkScriptFile": "<rootDir>/src/__tests__/bootstrap.js",
+    "testPathIgnorePatterns": [
+      "/node_modules/",
+      "<rootDir>/src/__tests__/bootstrap.js"
+    ]
   },
   "</Settings>": "------------------------ End of Foundation Settings ------------------------------",
   "scripts": {
