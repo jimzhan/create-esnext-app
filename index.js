@@ -54,7 +54,7 @@ inquirer
     }
   ])
   .then(answers => {
-    if (!validateProjectName(answers.project)) {
+    if (!validateProjectName(answers.name)) {
       logger.error(`Please provide a valid project name`)
       process.exit(1)
     } else {
