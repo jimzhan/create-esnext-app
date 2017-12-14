@@ -14,10 +14,7 @@
       "transform-class-properties",
       "transform-runtime",
       ["module-resolver", {
-        "root": ["./src"],
-        "alias": {
-          "tests": "./tests"
-        }
+        "root": ["./src"]
       }]
     ]
   },
@@ -49,7 +46,7 @@
   "lint-staged": {
     "src/**/*.{js,jsx,css,less,scss}": [
       "prettier-standard",
-      "git add ."
+      "git add"
     ]
   },
   "jest": {
@@ -62,7 +59,7 @@
   "scripts": {
     "precommit": "lint-staged",
     "prebuild": "npm run clean",
-    "commit": "git-cz",
+    "commit": "git add . && git-cz",
     "commitmsg": "commitlint -e $GIT_PARAMS",
     "build": "react-app-rewired build",
     "clean": "rimraf build",

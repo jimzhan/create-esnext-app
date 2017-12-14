@@ -46,7 +46,7 @@
   "lint-staged": {
     "src/**/*.{js,jsx,css,less,scss}": [
       "prettier-standard",
-      "git add ."
+      "git add"
     ]
   },
   "jest": {
@@ -64,7 +64,7 @@
   "scripts": {
     "precommit": "lint-staged",
     "prebuild": "npm run clean",
-    "commit": "git-cz",
+    "commit": "git add . && git-cz",
     "commitmsg": "commitlint -e $GIT_PARAMS",
     "build": "babel src -d build",
     "clean": "rimraf build",

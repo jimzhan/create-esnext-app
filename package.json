@@ -11,18 +11,15 @@
       "jest"
     ],
     "plugins": [
-      "transform-class-properties",
       "transform-decorators-legacy",
+      "transform-class-properties",
       "transform-runtime",
       [
         "module-resolver",
         {
           "root": [
             "./lib"
-          ],
-          "alias": {
-            "tests": "./tests"
-          }
+          ]
         }
       ]
     ]
@@ -113,7 +110,6 @@
     "eslint-plugin-promise": "^3.6.0",
     "eslint-plugin-standard": "^3.0.1",
     "jest": "^21.2.1",
-    "prettier-standard": "^7.0.3",
-    "semantic-release": "^8.2.0"
+    "prettier-standard": "^7.0.3"
   }
 }
