@@ -44,9 +44,7 @@ create-esnext-app
   * [StandardJS](https://github.com/standard/eslint-config-standard).
   * [VSCode](https://code.visualstudio.com/) supports.
   * [Jest](https://github.com/facebook/jest) with:
-* [Jest](https://github.com/facebook/jest) with:
-  * Bootstrap supports (via `tests/bootstrap`).
-  * [VSCode](https://code.visualstudio.com/) supports.
+* [Jest](https://github.com/facebook/jest) with [VSCode](https://code.visualstudio.com/) supports.
 * [Prettier](https://github.com/prettier/prettier) for code formatting (`precommit` and `VSCode`).
 * [Husky](https://github.com/typicode/husky) for GIT hooks.
 * [per-env](https://github.com/ericclemmons/per-env) for npm scripts.
