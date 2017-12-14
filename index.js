@@ -1,11 +1,10 @@
 #!/usr/bin/env node
+const chalk = require('chalk')
 const inquirer = require('inquirer')
 const validateProjectName = require('validate-npm-package-name')
 const currentNodeVer = process.versions.node
 const major = currentNodeVer.split('.')[0]
-
-const { logger } = require('./lib')
-const createESNextApp = require('./tasks/create-esnext-app')
+const { logger, packages, project } = require('./lib')
 
 const requiredVer = 8
 
@@ -18,6 +17,23 @@ if (major < requiredVer) {
     ].join('\n')
   )
   process.exit(1)
+}
+
+const { Basic, React } = packages
+
+const createESNextApp = answers => {
+  const { name, template } = answers
+  console.log(
+    chalk`{green ●} Start creating ESNext application <type: ${template}>: ${name}`
+  )
+
+  switch (answers.template) {
+    case 'react':
+      project.create(name, template, React)
+      break
+    default:
+      project.create(name, template, Basic)
+  }
 }
 
 inquirer
