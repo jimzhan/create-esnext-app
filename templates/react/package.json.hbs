@@ -71,7 +71,6 @@
     "prestart:production": "npm run build",
     "start:production": "node build/index.js",
     "pretest": "rimraf coverage",
-    "test": "cross-env NODE_ENV=test react-scripts test --coverage --env=jsdom",
-    "test:rewired": "cross-env NODE_ENV=test react-app-rewired test --coverage --env=jsdom"
+    "test": "cross-env NODE_ENV=test react-app-rewired test --coverage --env=jsdom"
   }
 }
