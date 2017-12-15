@@ -1,0 +1,9 @@
+language: node_js
+node_js:
+  - "8"
+  - "9"
+  - "stable"
+before_script:
+  - git config --global user.name 'Travis-CI'
+  - git config --global user.email 'jim.zhan@me.com'
+after_success: npm run release
