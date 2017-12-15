@@ -3,18 +3,22 @@
 Opinionated ESNext application boilerplate generator.
 
 [![build](https://travis-ci.org/jimzhan/create-esnext-app.svg?branch=master)](https://travis-ci.org/jimzhan/create-esnext-app)
+[![Standard Version](https://img.shields.io/badge/release-standard%20version-brightgreen.svg)](https://github.com/conventional-changelog/standard-version)
+[![npm version](https://img.shields.io/npm/v/create-esnext-app.svg)](https://www.npmjs.com/package/create-esnext-app)
+[![npm downloads](https://img.shields.io/npm/dt/create-esnext-app.svg)](https://www.npmjs.com/package/create-esnext-app)
+
 [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 [![Styled with Prettier](https://img.shields.io/badge/styled_with-prettier-ff69b4.svg)](https://github.com/prettier/prettier)
 [![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/)
-[![npm version](https://img.shields.io/npm/v/create-esnext-app.svg)](https://www.npmjs.com/package/create-esnext-app)
-[![npm downloads](https://img.shields.io/npm/dt/create-esnext-app.svg)](https://www.npmjs.com/package/create-esnext-app)
 [![dependencies](https://david-dm.org/jimzhan/create-esnext-app.svg)](https://david-dm.org/jimzhan/create-esnext-app.svg)
+
 
 ## Supported Templates
 
 * [Basic](#basic---esnext-boilerplate) - Foundation of every ESNext based application.
 * [Fastify](#fastify-server-boilerplate) - Fastify based API server template.
 * [React](#react--antd-boilerplate) - React based template (without configuration needed).
+
 
 ## Installation
 
