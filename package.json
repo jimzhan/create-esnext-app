@@ -63,7 +63,7 @@
     "minor": "npm version minor",
     "postminor": "npm run push",
     "push": "git push --follow-tags origin master && npm publish",
-    "release": "standard-version --no-verify",
+    "release": "standard-version",
     "postrelease": "npm run push",
     "</Version>": "======= Semantic Versioning ======="
   },
