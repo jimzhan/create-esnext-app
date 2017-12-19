@@ -1,7 +1,5 @@
-# create-esnext-app
-
-[![build](https://travis-ci.org/jimzhan/create-esnext-app.svg?branch=master)](https://travis-ci.org/jimzhan/create-esnext-app)
-
+# create-esnext-app  [![build](https://travis-ci.org/jimzhan/create-esnext-app.svg?branch=master)](https://travis-ci.org/jimzhan/create-esnext-app)
+ 
 Opinionated ESNext application boilerplate generator.
 
 [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
