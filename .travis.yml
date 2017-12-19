@@ -3,11 +3,16 @@ node_js:
 - '9'
 - stable
 before_script:
-- git config --global user.name 'Travis-CI'
-- git config --global user.email 'jim.zhan@me.com'
+- git config --global user.email "jim.zhan@me.com"
+- git config --global user.name "jimzhan"
+- git remote rm origin
+- git remote add origin https://jimzhan:${GH_TOKEN}@github.com/jimzhan/create-esnext-app.git
 after_success: npm run release -- --no-verify
 deploy:
   provider: npm
   email: jim.zhan@me.com
   api_key:
     secure: TCjhLOUeNLqEImWFodCD/xLf1pqymLYli0Fn52dDNPwTeT+23slPJ0AC1pkuMjkv+4gE7EHhEux2fX8rTkM0bx0P/QhgTP3+zteaThRNhqRB2lLE6/Fa9U4oEqSDSKYU7Dk5CmSb4daQdP4rC/t4IFXyeI1IS1dLswNuMwlkb7otxGfXLSI9wWQglPXtLRx4MW0avrKmZD+Yl/XcPcE1e8Tql42GS7q21vRQaTL0KCt5ajzgjesgJkbhddb7MQA6pulYEIuU5BKtEJJrefxgTypnaIdIeDBm03E43ousPn7YZp5CUv1/9v8wsb2YyS9I6szLlPhZUkl+fhQL7VQ3x1KELK+ecLdTVYL3VSTuuOs0+Rsm6H4efHkKw9ICKyCJq3qBXjMO5dAAaElsoyI5d5X1rHymW8nZHR37dM0mLR61jQs0IkVXDlewAsVnIfg/3yJwr6nhANJoZErp5rMxbW0F72ux+Z4eh86OyavP62v/hlLDrJPzQR4fNIERqzun2cJBraVPwfyujQMayNTIJxe9xW9Jrr3q5S0VejALyBL/K+9vdLiQ+FwJt9SMwIl7NTpn4NAW3/IkCQnH3TYzXqsk5y/IXFAk1o02ZPecaUH0wum2BFG0km/D7e5ombHQWvz/d7BvhgtmD8wqmv6zASK38MohnTyqg5FqofSxBcQ=
+env:
+  global:
+    secure: TtyzLpIFyE0BrRA8bCzN0UrqTow4aQWqbX2Wdtm0Rg8INH7ddtMoZnR2JH8FcaFtzR5eVSo4V2H8dBo1j8ktEZVRDGyoJPow1dBJ3wSPj1vxv88oDHi5r8NMrgV3qVsf8io78oJw52o9LiWOAiuyjS6bOksXvwpoekeHXFrpkd9GJWMG9p7Y//fdzso3pZUNG8BLZCGpguAT83UABxq2JfgdXAWQvOexHW00j3Jgi3QnmT00nFnGdaT89f9sh4zKLBiMf7W7hSZqiCMY0/l04RoLUapVw7JwOOVN0xnZnHGfyhV9DNNWTa9IlwxUMa0avuwAlI/i5XY+fvhKqTLwFieB/to1nYyqzBck47II/kCik+6Jo6NN2nN4gOWGra+5/O6pxdU1l5UDMkPFEBE0HaCAUVtGUdQ6585JNfFR7HZP0ot4HrPSMLRwFACPtP/ySp+brN4HtLQFworucLBTvyUTlbnaPfp1vdH7FFxpTsTRlcfnaaaE1ES+j/4ClX4ViFmrrIs8DpQv4tv12r+5pmpITNZplU3y2FU6cvhVN/t9fj7ARjHPbYim/KyYkx57ipBu4CQoIvfUXH/ANmWajoDR3rQtmGGIj352IPwrlDEYVM81ffJlyXmAlt8HPMajbxy3EH/krQDgsvWIGh3SbggLu8V9hOhkjP1KUp7OhhQ=
