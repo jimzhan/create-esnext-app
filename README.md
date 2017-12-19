@@ -13,6 +13,16 @@ Opinionated ESNext application boilerplate generator.
 [![npm downloads](https://img.shields.io/npm/dt/create-esnext-app.svg)](https://www.npmjs.com/package/create-esnext-app)
 
 
+## Key Features
+
+* Cutting edge [babel](https://babeljs.io/) supports.
+* GIT Workflow includes
+  - auto-code formatting (via [prettier-standard](https://github.com/sheerun/prettier-standard)).
+  - structural commit message restriction/validation (via [commitizen](https://github.com/commitizen/cz-cli)/[conventional-changelog](https://github.com/commitizen/cz-conventional-changelog) and [commitlint](https://github.com/marionebl/commitlint))
+* Automatic versioning and CHANGELOG generation (via [standard-version](https://github.com/conventional-changelog/standard-version)).
+* Pre-configured VSCode editing & debugging settings.
+
+
 ## Supported Templates
 
 * [Basic](#basic---esnext-boilerplate) - Foundation of every ESNext based application.
