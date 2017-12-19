@@ -38,6 +38,11 @@ npm update -g create-esnext-app
 create-esnext-app
 ```
 
+## GIT Workflow
+
+![GIT Workflow](https://user-images.githubusercontent.com/460877/34139708-38418338-e4b1-11e7-8e72-028e4e138a98.png)
+
+
 ## Templates
 
 ###  Basic - ESNext Boilerplate
