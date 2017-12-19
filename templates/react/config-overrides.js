@@ -6,7 +6,7 @@ module.exports = function override (config, env) {
   config = injectBabelPlugin('transform-decorators-legacy', config)
   config = injectBabelPlugin('transform-class-properties', config)
   config = injectBabelPlugin(
-    ['import', { libraryName: 'antd', style: true }],
+    ['import', { libraryName: 'antd', libraryDirectory: 'es', style: true }],
     config
   )
   config = injectBabelPlugin(
