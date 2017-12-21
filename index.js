@@ -24,7 +24,7 @@ const { Basic, Fastify, React, MobX } = packages
 const createESNextApp = answers => {
   const { name, template } = answers
   console.log(
-    chalk`{green ●} 🤖 Start creating ESNext application <type: ${template}>: ${name}`
+    chalk`{green ●} ☕️ Start creating ESNext application <type: ${template}>: ${name}`
   )
 
   switch (answers.template) {
