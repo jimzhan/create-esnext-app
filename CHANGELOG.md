@@ -2,6 +2,26 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="0.7.0"></a>
+# [0.7.0](https://github.com/jimzhan/create-esnext-app/compare/v0.5.8...v0.7.0) (2017-12-24)
+
+
+### Features
+
+* **pm2:** added `pm2` supports for `development` & `production` ([9e84598](https://github.com/jimzhan/create-esnext-app/commit/9e84598))
+
+
+
+<a name="0.6.0"></a>
+# [0.6.0](https://github.com/jimzhan/create-esnext-app/compare/v0.5.8...v0.6.0) (2017-12-24)
+
+
+### Features
+
+* **pm2:** added `pm2` supports for `development` & `production` ([9e84598](https://github.com/jimzhan/create-esnext-app/commit/9e84598))
+
+
+
 <a name="0.5.8"></a>
 ## [0.5.8](https://github.com/jimzhan/create-esnext-app/compare/v0.5.7...v0.5.8) (2017-12-21)
 
