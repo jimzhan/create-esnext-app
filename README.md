@@ -1,5 +1,5 @@
 # create-esnext-app
- 
+
 Opinionated ESNext application boilerplate generator.
 
 [![build](https://travis-ci.org/jimzhan/create-esnext-app.svg?branch=master)](https://travis-ci.org/jimzhan/create-esnext-app)
@@ -83,6 +83,7 @@ create-esnext-app
 * Foundation extended from [Basic](#basic---esnext-boilerplate).
 * [Fastify](https://github.com/fastify/fastify) - An modern efficient server.
 * [Convict](https://github.com/mozilla/node-convict) - expands on the standard pattern of configuring.
+* [PM2](https://github.com/Unitech/pm2) - production process manager.
 
 
 ### React + AntD Boilerplate
