@@ -70,9 +70,9 @@
     "clean": "rimraf build",
     "lint": "eslint --ext .jsx,.js src tests",
     "start": "per-env",
-    "start:development": "cross-env NODE_ENV=development babel-node src/index.js",
+    "start:development": "pm2 startOrReload ecosystem.config.js --no-daemon --only SID --log logs/app.sid.log && pm2 logs",
     "prestart:production": "npm run build",
-    "start:production": "cross-env NODE_ENV=production node build/index.js",
+    "start:production": "pm2 startOrReload ecosystem.config.js --only PROD --log logs/app.prod.log",
     "test": "cross-env NODE_ENV=test TIMEOUT=10000 jest --forceExit"
   }
 }
