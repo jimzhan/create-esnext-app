@@ -18,27 +18,30 @@ module.exports = {
     }
   ],
   /**
-   * Deployment section
-   * http://pm2.keymetrics.io/docs/usage/deployment/
+   * ------- Deployment Section -------
+   *  *NOTE* please replace `host`, `path`, `repo` and `ref` with your actual ones.
    */
   deploy: {
     production: {
       user: 'node',
-      host: '212.83.163.1',
+      host: '127.0.0.1',
       ref: 'origin/master',
       repo: 'git@github.com:repo.git',
       path: '/var/www/production',
-      'post-deploy': 'npm install && pm2 reload ecosystem.config.js --env production'
+      'post-deploy': 'npm install && npm start',
+      env: {
+        NODE_ENV: 'production'
+      }
     },
-    dev: {
+    staging: {
       user: 'node',
-      host: '212.83.163.1',
+      host: '127.0.0.1',
       ref: 'origin/master',
       repo: 'git@github.com:repo.git',
-      path: '/var/www/development',
-      'post-deploy': 'npm install && pm2 reload ecosystem.config.js --env dev',
+      path: '/var/www/staging',
+      'post-deploy': 'npm install && npm start',
       env: {
-        NODE_ENV: 'dev'
+        NODE_ENV: 'production'
       }
     }
   }
