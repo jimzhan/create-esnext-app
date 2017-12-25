@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="0.8.0"></a>
+# [0.8.0](https://github.com/jimzhan/create-esnext-app/compare/v0.7.3...v0.8.0) (2017-12-25)
+
+
+### Features
+
+* **fastify:** added `deploy` supports via `pm2` ([ee5f2a7](https://github.com/jimzhan/create-esnext-app/commit/ee5f2a7))
+
+
+
 <a name="0.7.3"></a>
 ## [0.7.3](https://github.com/jimzhan/create-esnext-app/compare/v0.7.2...v0.7.3) (2017-12-24)
 
