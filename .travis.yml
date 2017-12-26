@@ -7,7 +7,7 @@ before_script:
 - git config --global user.name "jimzhan"
 - git remote rm origin
 - git remote add origin https://jimzhan:${GH_TOKEN}@github.com/jimzhan/create-esnext-app.git
-after_success: npm run release -- --no-verify
+after_success: npm run release
 env:
   global:
     secure: TtyzLpIFyE0BrRA8bCzN0UrqTow4aQWqbX2Wdtm0Rg8INH7ddtMoZnR2JH8FcaFtzR5eVSo4V2H8dBo1j8ktEZVRDGyoJPow1dBJ3wSPj1vxv88oDHi5r8NMrgV3qVsf8io78oJw52o9LiWOAiuyjS6bOksXvwpoekeHXFrpkd9GJWMG9p7Y//fdzso3pZUNG8BLZCGpguAT83UABxq2JfgdXAWQvOexHW00j3Jgi3QnmT00nFnGdaT89f9sh4zKLBiMf7W7hSZqiCMY0/l04RoLUapVw7JwOOVN0xnZnHGfyhV9DNNWTa9IlwxUMa0avuwAlI/i5XY+fvhKqTLwFieB/to1nYyqzBck47II/kCik+6Jo6NN2nN4gOWGra+5/O6pxdU1l5UDMkPFEBE0HaCAUVtGUdQ6585JNfFR7HZP0ot4HrPSMLRwFACPtP/ySp+brN4HtLQFworucLBTvyUTlbnaPfp1vdH7FFxpTsTRlcfnaaaE1ES+j/4ClX4ViFmrrIs8DpQv4tv12r+5pmpITNZplU3y2FU6cvhVN/t9fj7ARjHPbYim/KyYkx57ipBu4CQoIvfUXH/ANmWajoDR3rQtmGGIj352IPwrlDEYVM81ffJlyXmAlt8HPMajbxy3EH/krQDgsvWIGh3SbggLu8V9hOhkjP1KUp7OhhQ=
