@@ -1,6 +1,6 @@
 {
   "name": "create-esnext-app",
-  "version": "0.9.18",
+  "version": "0.9.19",
   "description": "Opinionated ESNext application boilerplate generator.",
   "main": "lib/index.js",
   "bin": "index.js",
