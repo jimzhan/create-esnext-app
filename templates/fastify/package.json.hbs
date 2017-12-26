@@ -72,7 +72,7 @@
     "test": "cross-env NODE_ENV=test TIMEOUT=10000 jest --forceExit",
     "<start>": "---------- Application Services Starter ----------",
     "start": "per-env",
-    "start:development": "pm2 startOrReload ecosystem.config.js --no-daemon --only SID --log logs/app.sid.log && pm2 logs",
+    "start:development": "nodemon src/index.js",
     "prestart:production": "npm run build",
     "start:production": "pm2 startOrReload ecosystem.config.js --only PROD --log logs/app.prod.log",
     "<deploy>": "---------- Application Deployment ----------",
