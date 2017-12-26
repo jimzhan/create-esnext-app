@@ -9,6 +9,7 @@ import { children } from './proptypes'
 const Wrapper = styled.div`
   display: flex;
   flex-direction: 'row';
+  min-width: 1280px;
 `
 
 const Container = styled(AntLayout)`
@@ -19,6 +20,7 @@ const Container = styled(AntLayout)`
 
 const Content = styled(AntLayout.Content)`
   flex: 1;
+  margin-top: 100px;
 `
 
 const Layout = props => {
