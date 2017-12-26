@@ -16,5 +16,6 @@ deploy:
   on:
     tags: true
 after_success:
-  - npm run release
+  - standard-version --no-verify
+  - git push --follow-tags origin master
   - npm publish --verbose
