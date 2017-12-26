@@ -58,9 +58,8 @@
     "commitmsg": "commitlint -e $GIT_PARAMS",
     "lint": "eslint --ext .js lib",
     "<Version>": "======= Semantic Versioning =======",
-    "push": "git push --follow-tags origin master",
     "release": "standard-version --no-verify",
-    "postrelease": "npm run push && npm publish --verbose"
+    "postrelease": "git push --follow-tags origin master"
   },
   "repository": {
     "type": "git",
