@@ -55,7 +55,7 @@
   "scripts": {
     "<husky>": "-------------------- Husky GIT Hooks --------------------",
     "precommit": "lint-staged",
-    "postpush": "standard-version && git push --follow-tags origin master",
+    "postupdate": "standard-version && git push --follow-tags origin master",
     "</husky>": "------------------ End of Husky GIT Hooks -----------------",
     "commit": "git add . && git-cz",
     "commitmsg": "commitlint -e $GIT_PARAMS",
