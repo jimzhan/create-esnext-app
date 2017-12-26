@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="0.9.0"></a>
+# [0.9.0](https://github.com/jimzhan/create-esnext-app/compare/v0.8.4...v0.9.0) (2017-12-26)
+
+
+### Features
+
+* **fastify:** added tracer for pino and replace pm2 with nodemon ([8cad2fc](https://github.com/jimzhan/create-esnext-app/commit/8cad2fc))
+
+
+
 <a name="0.8.4"></a>
 ## [0.8.4](https://github.com/jimzhan/create-esnext-app/compare/v0.8.3...v0.8.4) (2017-12-26)
 
