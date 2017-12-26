@@ -17,5 +17,5 @@ deploy:
     tags: true
 after_success:
   - standard-version --no-verify
-  - git push --follow-tags origin master
+  - git push --quiet --follow-tags origin $TRAVIS_BRANCH
   - npm publish --verbose
