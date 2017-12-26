@@ -4,7 +4,7 @@
   "description": "Opinionated ESNext application boilerplate generator.",
   "main": "lib/index.js",
   "bin": "index.js",
-  "<Settings>": "------------------------------ Foundation Settings ------------------------------",
+  "<Settings>": "------------------------------ Application Settings ------------------------------",
   "babel": {
     "presets": [
       "env",
@@ -51,21 +51,16 @@
       "git add"
     ]
   },
-  "</Settings>": "------------------------ End of Foundation Settings ------------------------------",
+  "</Settings>": "------------------------ End of Application Settings ------------------------------",
   "scripts": {
     "precommit": "lint-staged",
     "commit": "git add . && git-cz",
     "commitmsg": "commitlint -e $GIT_PARAMS",
     "lint": "eslint --ext .js lib",
     "<Version>": "======= Semantic Versioning =======",
-    "patch": "npm version patch",
-    "postpatch": "npm run push",
-    "minor": "npm version minor",
-    "postminor": "npm run push",
     "push": "git push --follow-tags origin master && npm publish",
-    "release": "standard-version",
-    "postrelease": "npm run push",
-    "</Version>": "======= Semantic Versioning ======="
+    "release": "standard-version --no-verify",
+    "postrelease": "npm run push"
   },
   "repository": {
     "type": "git",
