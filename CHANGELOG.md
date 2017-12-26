@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="0.9.27"></a>
+## [0.9.27](https://github.com/jimzhan/create-esnext-app/compare/v0.9.5...v0.9.27) (2017-12-26)
+
+
+### Bug Fixes
+
+* **travis:** fixed travsi recursive build ([601e2a3](https://github.com/jimzhan/create-esnext-app/commit/601e2a3))
+
+
+
 <a name="0.9.26"></a>
 ## [0.9.26](https://github.com/jimzhan/create-esnext-app/compare/v0.9.5...v0.9.26) (2017-12-26)
 
