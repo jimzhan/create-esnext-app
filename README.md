@@ -52,7 +52,11 @@ create-esnext-app
 
 #### GIT Commit
 
-![GIT Workflow](https://user-images.githubusercontent.com/460877/34139708-38418338-e4b1-11e7-8e72-028e4e138a98.png)
+![GIT Commit](https://user-images.githubusercontent.com/460877/34345735-28409f70-ea2c-11e7-83aa-6bb9051138b3.png)
+
+#### GIT Push
+
+![GIT Push](https://user-images.githubusercontent.com/460877/34345739-2d6e6a4a-ea2c-11e7-886e-cc677e1d4d11.png)
 
 
 ## Templates
