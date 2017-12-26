@@ -2,6 +2,11 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="0.9.24"></a>
+## [0.9.24](https://github.com/jimzhan/create-esnext-app/compare/v0.9.23...v0.9.24) (2017-12-26)
+
+
+
 <a name="0.9.23"></a>
 ## [0.9.23](https://github.com/jimzhan/create-esnext-app/compare/v0.9.22...v0.9.23) (2017-12-26)
 
