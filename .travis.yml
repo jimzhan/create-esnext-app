@@ -7,7 +7,7 @@ before_script:
   - git config --global user.name "jimzhan"
   - git remote rm origin
   - git remote add origin https://jimzhan:${GH_TOKEN}@github.com/jimzhan/create-esnext-app.git
-  - npm install --global standard-version makeshift
+  - npm install --global makeshift
   - makeshift -s @bcoe -r registry.npmjs.org
 deploy:
   provider: npm
@@ -16,7 +16,4 @@ deploy:
   on:
     tags: true
 after_success:
-  - standard-version --no-verify
-  - git push --verbose origin HEAD:$TRAVIS_BRANCH
-  - git push --tags --verbose
   - npm publish --verbose
