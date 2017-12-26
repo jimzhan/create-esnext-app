@@ -6,7 +6,7 @@ before_script:
 - git config --global user.email "jim.zhan@me.com"
 - git config --global user.name "jimzhan"
 - git remote rm origin
-- git remote add origin https://github.com/jimzhan/create-esnext-app.git
+- git remote add origin https://jimzhan:${GH_TOKEN}@github.com/jimzhan/create-esnext-app.git
 - npm install --global standard-version
 after_success:
 - npm run release
