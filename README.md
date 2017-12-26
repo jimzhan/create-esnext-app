@@ -86,7 +86,7 @@ create-esnext-app
 
 * Foundation extended from [Basic](#basic---esnext-boilerplate).
 * [Fastify](https://github.com/fastify/fastify) - An modern efficient server.
-* [Convict](https://github.com/mozilla/node-convict) - expands on the standard pattern of configuring.
+* [Convict](https://github.com/mozilla/node-convict) - expands on the standard pattern of configuring with dynamic settings supports.
 * [PM2](https://github.com/Unitech/pm2) - production process manager.
 
 
