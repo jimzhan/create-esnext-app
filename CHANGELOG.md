@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="0.9.5"></a>
+## [0.9.5](https://github.com/jimzhan/create-esnext-app/compare/v0.9.4...v0.9.5) (2017-12-26)
+
+
+### Bug Fixes
+
+* **travis:** fixed missing `GH_TOKEN` issue ([ee4ff6e](https://github.com/jimzhan/create-esnext-app/commit/ee4ff6e))
+* **travis:** moved to standard-version CLI ([fbeea82](https://github.com/jimzhan/create-esnext-app/commit/fbeea82))
+
+
+
 <a name="0.9.4"></a>
 ## [0.9.4](https://github.com/jimzhan/create-esnext-app/compare/v0.9.3...v0.9.4) (2017-12-26)
 
