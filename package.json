@@ -53,13 +53,11 @@
   },
   "</Settings>": "------------------------ End of Application Settings ------------------------------",
   "scripts": {
-    "<husky>": "-------------------- Husky GIT Hooks --------------------",
     "precommit": "lint-staged",
-    "postupdate": "standard-version && git push --follow-tags origin master",
-    "</husky>": "------------------ End of Husky GIT Hooks -----------------",
     "commit": "git add . && git-cz",
     "commitmsg": "commitlint -e $GIT_PARAMS",
-    "lint": "eslint --ext .js lib"
+    "lint": "eslint --ext .js lib",
+    "release": "standard-version && git push --follow-tags origin master"
   },
   "repository": {
     "type": "git",
