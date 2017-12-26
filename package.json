@@ -1,6 +1,6 @@
 {
   "name": "create-esnext-app",
-  "version": "0.9.25",
+  "version": "0.9.26",
   "description": "Opinionated ESNext application boilerplate generator.",
   "main": "lib/index.js",
   "bin": "index.js",
@@ -57,7 +57,7 @@
     "commit": "git add . && git-cz",
     "commitmsg": "commitlint -e $GIT_PARAMS",
     "lint": "eslint --ext .js lib",
-    "release": "standard-version && git push --follow-tags origin master"
+    "release": "standard-version --no-verify && git push --follow-tags origin master"
   },
   "repository": {
     "type": "git",
