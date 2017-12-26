@@ -1,13 +1,20 @@
 language: node_js
 node_js:
-- '9'
-- stable
+  - '9'
+  - stable
 before_script:
-- git config --global user.email "jim.zhan@me.com"
-- git config --global user.name "jimzhan"
-- git remote rm origin
-- git remote add origin https://jimzhan:${GH_TOKEN}@github.com/jimzhan/create-esnext-app.git
-- npm install --global standard-version
+  - git config --global user.email "jim.zhan@me.com"
+  - git config --global user.name "jimzhan"
+  - git remote rm origin
+  - git remote add origin https://jimzhan:${GH_TOKEN}@github.com/jimzhan/create-esnext-app.git
+  - npm install --global standard-version makeshift
+  - makeshift -s @bcoe -r registry.npmjs.org
+deploy:
+  provider: npm
+  email: jim.zhan@me.com 
+  api_key: $NPM_TOKEN
+  on:
+    tags: true
 after_success:
-- npm run release
-- npm publish --verbose
+  - npm run release
+  - npm publish --verbose
