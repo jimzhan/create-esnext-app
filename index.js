@@ -19,7 +19,7 @@ if (major < requiredVer) {
   process.exit(1)
 }
 
-const { Basic, Fastify, React, MobX } = packages
+const { Basic, Fastify, React, Redux, MobX } = packages
 
 const createESNextApp = answers => {
   const { name, template } = answers
@@ -36,6 +36,9 @@ const createESNextApp = answers => {
       break
     case 'mobx':
       project.create(name, ['react', 'mobx'], MobX)
+      break
+    case 'redux':
+      project.create(name, ['react', 'redux'], Redux)
       break
     default:
       project.create(name, template, Basic)
@@ -57,6 +60,7 @@ inquirer
         { name: 'Basic - ESNext Boilerplate', value: 'basic' },
         { name: 'Fastify - Server Boilerplate', value: 'fastify' },
         { name: 'React + AntD Boilerplate', value: 'react' },
+        // { name: 'Redux + React Boilerplate', value: 'redux' },
         { name: 'MobX + React Boilerplate', value: 'mobx' }
       ]
     }

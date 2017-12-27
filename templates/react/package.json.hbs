@@ -2,22 +2,7 @@
   "private": true,
   "name": "{{ name }}",
   "version": "{{ version }}",
-  "<Settings>": "------------------------------ Foundation Settings ------------------------------",
-  "babel": {
-    "presets": [
-      "env",
-      "jest",
-      "react"
-    ],
-    "plugins": [
-      "transform-decorators-legacy",
-      "transform-class-properties",
-      "transform-runtime",
-      ["module-resolver", {
-        "root": ["./src"]
-      }]
-    ]
-  },
+  "<Settings>": "------------------------------ Application Settings ------------------------------",
   "commitlint": {
     "extends": [
       "@commitlint/config-conventional"
@@ -57,7 +42,7 @@
       "!**/src/registerServiceWorker.js"
     ]
   },
-  "</Settings>": "------------------------ End of Foundation Settings ------------------------------",
+  "</Settings>": "------------------------ End of Application Settings ------------------------------",
   "scripts": {
     "precommit": "lint-staged",
     "prebuild": "npm run clean",

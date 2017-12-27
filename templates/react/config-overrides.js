@@ -3,8 +3,10 @@ const rewireLess = require('react-app-rewire-less')
 const rewireEslint = require('react-app-rewire-eslint')
 
 module.exports = function override (config, env) {
-  config = injectBabelPlugin('transform-decorators-legacy', config)
-  config = injectBabelPlugin('transform-class-properties', config)
+  config = injectBabelPlugin(
+    ['transform-decorators-legacy', 'transform-class-properties'],
+    config
+  )
   config = injectBabelPlugin(
     ['import', { libraryName: 'antd', libraryDirectory: 'es', style: true }],
     config
@@ -14,7 +16,7 @@ module.exports = function override (config, env) {
       'module-resolver',
       {
         root: ['./src'],
-        alias: { tests: './tests' }
+        alias: { tests: './src/__tests__' }
       }
     ],
     config
