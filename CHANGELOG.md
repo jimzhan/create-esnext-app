@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="0.11.0"></a>
+# [0.11.0](https://github.com/jimzhan/create-esnext-app/compare/v0.10.1...v0.11.0) (2017-12-27)
+
+
+### Features
+
+* **template:** enabled `MobX` template ([4bbde8d](https://github.com/jimzhan/create-esnext-app/commit/4bbde8d))
+
+
+
 <a name="0.10.1"></a>
 ## [0.10.1](https://github.com/jimzhan/create-esnext-app/compare/v0.10.0...v0.10.1) (2017-12-27)
 
