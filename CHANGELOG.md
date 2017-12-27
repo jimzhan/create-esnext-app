@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="0.10.0"></a>
+# [0.10.0](https://github.com/jimzhan/create-esnext-app/compare/v0.9.29...v0.10.0) (2017-12-27)
+
+
+### Features
+
+* **template:** added new temlpate skeleton for `redux` ([2876d44](https://github.com/jimzhan/create-esnext-app/commit/2876d44))
+
+
+
 <a name="0.9.29"></a>
 ## [0.9.29](https://github.com/jimzhan/create-esnext-app/compare/v0.9.27...v0.9.29) (2017-12-27)
 
