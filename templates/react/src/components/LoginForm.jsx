@@ -64,7 +64,7 @@ class LoginForm extends React.Component {
               valuePropName: 'checked',
               initialValue: true
             })(<Checkbox>Remember me</Checkbox>)}
-            <a href='#' style={{ float: 'right' }}>Forgot password</a>
+            <a href='' style={{ float: 'right' }}>Forgot password</a>
             <Button
               htmlType='submit'
               style={{ width: '100%' }}
