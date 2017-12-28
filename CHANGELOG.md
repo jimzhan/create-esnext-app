@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="0.11.4"></a>
+## [0.11.4](https://github.com/jimzhan/create-esnext-app/compare/v0.11.3...v0.11.4) (2017-12-28)
+
+
+### Bug Fixes
+
+* **template:** added missing `react-router-dom` ([b967721](https://github.com/jimzhan/create-esnext-app/commit/b967721))
+
+
+
 <a name="0.11.3"></a>
 ## [0.11.3](https://github.com/jimzhan/create-esnext-app/compare/v0.11.2...v0.11.3) (2017-12-28)
 
