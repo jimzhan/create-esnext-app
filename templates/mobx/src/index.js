@@ -2,6 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import { Provider } from 'mobx-react'
 import { AppContainer } from 'react-hot-loader'
+import { BrowserRouter as Router } from 'react-router-dom'
 import { RouterStore, syncHistoryWithStore } from 'mobx-react-router'
 import createBrowserHistory from 'history/createBrowserHistory'
 
