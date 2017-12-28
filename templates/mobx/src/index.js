@@ -2,13 +2,13 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import { Provider } from 'mobx-react'
 import { registerServiceWorker } from 'tasks'
-import App from './App'
-import UserStore from 'stores/UserStore'
+import { Home } from 'containers'
+import Store from 'stores'
 import './assets/styles/index.css'
 
 ReactDOM.render(
-  <Provider store={UserStore}>
-    <App />
+  <Provider store={new Store()}>
+    <Home />
   </Provider>,
   document.getElementById('root')
 )

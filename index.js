@@ -19,25 +19,22 @@ if (major < requiredVer) {
   process.exit(1)
 }
 
-const { Basic, Fastify, React, Redux, MobX } = packages
+const { Basic, Fastify, Redux, MobX } = packages
 
 const createESNextApp = answers => {
   const { name, template } = answers
   console.log(
-    chalk`{green ●} ☕️  Start creating ESNext application <type: ${template}>: ${name}`
+    chalk`{green ●} ☕️  Start creating ESNext application <type: {red ${template}}>: ${name}`
   )
 
   switch (answers.template) {
-    case 'fastify':
+    case 'Fastify':
       project.create(name, template, Fastify)
       break
-    case 'react':
-      project.create(name, template, React)
-      break
-    case 'mobx':
+    case 'MobX':
       project.create(name, ['react', 'mobx'], MobX)
       break
-    case 'redux':
+    case 'Redux':
       project.create(name, ['react', 'redux'], Redux)
       break
     default:
@@ -57,11 +54,11 @@ inquirer
       name: 'template',
       message: 'Which template you need?',
       choices: [
-        { name: 'Basic - ESNext Boilerplate', value: 'basic' },
-        { name: 'Fastify - Server Boilerplate', value: 'fastify' },
-        { name: 'React + AntD Boilerplate', value: 'react' },
-        // { name: 'Redux + React Boilerplate', value: 'redux' },
-        { name: 'MobX + React Boilerplate', value: 'mobx' }
+        { name: 'Basic - ESNext Boilerplate', value: 'Basic' },
+        { name: 'Fastify - Server Boilerplate', value: 'Fastify' },
+        // { name: 'React + AntD Boilerplate', value: 'React' },
+        // { name: 'Redux + React Boilerplate', value: 'Redux' },
+        { name: 'MobX + React Boilerplate', value: 'MobX' }
       ]
     }
   ])

@@ -15,9 +15,9 @@ const Header = styled(Layout.Header)`
   padding-left: 10px;
 `
 /* -------------------- End of Styled Controls -------------------- */
-const FormItem = Form.Item
+const { Item } = Form
 
-class LoginForm extends React.Component {
+class Login extends React.Component {
   static propTypes = {
     form: PropTypes.object.isRequired
   }
@@ -38,7 +38,7 @@ class LoginForm extends React.Component {
       <Wrapper>
         <Header>Login</Header>
         <Form onSubmit={this.handleSubmit} className='login-form' style={{ padding: '30px' }}>
-          <FormItem>
+          <Item>
             {getFieldDecorator('userName', {
               rules: [{ required: true, message: 'Please input your username!' }]
             })(
@@ -47,8 +47,8 @@ class LoginForm extends React.Component {
                 placeholder='Username'
               />
             )}
-          </FormItem>
-          <FormItem>
+          </Item>
+          <Item>
             {getFieldDecorator('password', {
               rules: [{ required: true, message: 'Please input your Password!' }]
             })(
@@ -58,8 +58,8 @@ class LoginForm extends React.Component {
                 placeholder='Password'
               />
             )}
-          </FormItem>
-          <FormItem>
+          </Item>
+          <Item>
             {getFieldDecorator('remember', {
               valuePropName: 'checked',
               initialValue: true
@@ -72,11 +72,11 @@ class LoginForm extends React.Component {
               Log in
             </Button>
             Or <a href=''>register now!</a>
-          </FormItem>
+          </Item>
         </Form>
       </Wrapper>
     )
   }
 }
 
-export default Form.create()(LoginForm)
+export default Form.create()(Login)

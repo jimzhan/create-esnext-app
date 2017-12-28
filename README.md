@@ -27,8 +27,7 @@ Opinionated ESNext application boilerplate generator.
 
 * [Basic](#basic---esnext-boilerplate) - Foundation of every ESNext based application.
 * [Fastify](#fastify-server-boilerplate) - Fastify based API server template.
-* [React](#react--antd-boilerplate) - React based template (without configuration needed).
-* [MobX](#mobx--react-boilerplate) - MobX + React template.
+* [MobX](#mobx--react-boilerplate) - MobX + React template built on top of [create-react-app](https://github.com/facebookincubator/create-react-app) and [react-app-rewired](https://github.com/timarney/react-app-rewired).
 
 
 ## Installation
@@ -91,18 +90,13 @@ create-esnext-app
 * [PM2](https://github.com/Unitech/pm2) - production process manager.
 
 
-### React + AntD Boilerplate
+### MobX + React Boilerplate
 
 * Foundation extended from [Basic](#basic---esnext-boilerplate).
 * [create-react-app](https://github.com/facebookincubator/create-react-app) based React boilerplate.
 * [react-app-rewired](https://github.com/timarney/react-app-rewired) for tweaking the `CRA` webpack config(s) without ejecting.
 * [Enzyme](https://github.com/airbnb/enzyme) testing utilities for React.
 * [Ant Design](https://github.com/ant-design/ant-design/) An enterprise-class UI design language and React-based implementation.
-
-
-### MobX + React Boilerplate
-
-* Foundation extended from [React](#react--antd-boilerplate).
 * [mobx-react](https://github.com/mobxjs/mobx-react) - React bindings for MobX.
 
 

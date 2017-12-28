@@ -1,3 +1,3 @@
-import * as UserServices from './UserServices'
+import * as UserServices from './user-services'
 
 export { UserServices }

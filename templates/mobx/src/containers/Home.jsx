@@ -1,21 +1,21 @@
 import React, { Component } from 'react'
 import { Row, Col } from 'antd'
 import { Layout } from 'layouts'
-import { LoginForm } from 'components'
-import './assets/styles/App.css'
+import { Login, Users } from 'components/users'
 
-class App extends Component {
+export default class Home extends Component {
   render () {
     return (
       <Layout>
         <Row type='flex' justify='space-around' align='middle'>
           <Col span={2} />
-          <Col span={8}><LoginForm /></Col>
+          <Col span={8}><Login /></Col>
           <Col span={2} />
+        </Row>
+        <Row>
+          <Col><Users /></Col>
         </Row>
       </Layout>
     )
   }
 }
-
-export default App
