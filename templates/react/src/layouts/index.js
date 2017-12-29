@@ -1,3 +1,3 @@
-import Layout from './Layout'
+import FlexLayout from './FlexLayout'
 
-export { Layout }
+export { FlexLayout }

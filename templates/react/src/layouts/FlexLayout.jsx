@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Layout as AntLayout } from 'antd'
+import { Layout, Row, Col } from 'antd'
 import Header from './Header'
 import Footer from './Footer'
 import { children } from './proptypes'
@@ -11,31 +11,37 @@ const Wrapper = styled.div`
   flex-direction: 'row';
 `
 
-const Container = styled(AntLayout)`
+const Container = styled(Layout)`
   display: flex;
   min-height: 100vh;
   flex-direction: column;
 `
 
-const Content = styled(AntLayout.Content)`
+const Content = styled(Layout.Content)`
   flex: 1;
   margin-top: 100px;
   min-width: 1024px;
   min-height: 768px;
 `
 
-const Layout = props => {
+const FlexLayout = props => {
   return (
     <Wrapper>
       <Container>
         <Header />
-        <Content>{props.children}</Content>
+        <Content>
+          <Row type='flex' justify='space-around' align='middle'>
+            <Col span={2} />
+            <Col span={8}>{props.children}</Col>
+            <Col span={2} />
+          </Row>
+        </Content>
         <Footer />
       </Container>
     </Wrapper>
   )
 }
 
-Layout.propTypes = { children }
+FlexLayout.propTypes = { children }
 
-export default Layout
+export default FlexLayout
