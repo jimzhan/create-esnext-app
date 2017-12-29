@@ -2,10 +2,10 @@
 const chalk = require('chalk')
 const inquirer = require('inquirer')
 const validateProjectName = require('validate-npm-package-name')
-const currentNodeVer = process.versions.node
-const major = currentNodeVer.split('.')[0]
 const { logger, packages, project } = require('./lib')
 
+const currentNodeVer = process.versions.node
+const major = currentNodeVer.split('.')[0]
 const requiredVer = 8
 
 if (major < requiredVer) {
@@ -19,7 +19,7 @@ if (major < requiredVer) {
   process.exit(1)
 }
 
-const { Basic, Fastify, Redux, MobX } = packages
+const { Basic, Fastify, MobX } = packages
 
 const createESNextApp = answers => {
   const { name, template } = answers
@@ -32,10 +32,7 @@ const createESNextApp = answers => {
       project.create(name, template, Fastify)
       break
     case 'MobX':
-      project.create(name, ['react', 'mobx'], MobX)
-      break
-    case 'Redux':
-      project.create(name, ['react', 'redux'], Redux)
+      project.create(name, template, MobX)
       break
     default:
       project.create(name, template, Basic)
