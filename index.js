@@ -56,8 +56,6 @@ inquirer
       choices: [
         { name: 'Basic - ESNext Boilerplate', value: 'Basic' },
         { name: 'Fastify - Server Boilerplate', value: 'Fastify' },
-        // { name: 'React + AntD Boilerplate', value: 'React' },
-        // { name: 'Redux + React Boilerplate', value: 'Redux' },
         { name: 'MobX + React Boilerplate', value: 'MobX' }
       ]
     }
