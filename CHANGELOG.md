@@ -2,6 +2,21 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="0.12.0"></a>
+# [0.12.0](https://github.com/jimzhan/create-esnext-app/compare/v0.11.8...v0.12.0) (2018-01-23)
+
+
+### Bug Fixes
+
+* **template:** Fixed Parcel related React issues ([b381379](https://github.com/jimzhan/create-esnext-app/commit/b381379))
+
+
+### Features
+
+* **template:** Added Parcel based MobX template ([f039278](https://github.com/jimzhan/create-esnext-app/commit/f039278))
+
+
+
 <a name="0.11.8"></a>
 ## [0.11.8](https://github.com/jimzhan/create-esnext-app/compare/v0.11.7...v0.11.8) (2018-01-05)
 
