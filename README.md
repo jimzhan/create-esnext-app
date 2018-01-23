@@ -103,7 +103,6 @@ create-esnext-app
 
 * Foundation extended from [Basic](#basic---esnext-boilerplate).
 * [Parcel](https://parceljs.org) based React boilerplate.
-* [react-app-rewired](https://github.com/timarney/react-app-rewired) for tweaking the `CRA` webpack config(s) without ejecting.
 * [Enzyme](https://github.com/airbnb/enzyme) testing utilities for React.
 * [Ant Design](https://github.com/ant-design/ant-design/) An enterprise-class UI design language and React-based implementation.
 * [mobx-react](https://github.com/mobxjs/mobx-react) - React bindings for MobX.
