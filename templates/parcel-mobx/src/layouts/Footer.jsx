@@ -13,9 +13,11 @@ const Footer = props => (
 )
 /* eslint-enable */
 
-Footer.propTypes = PropTypes.oneOfType([
-  PropTypes.arrayOf(PropTypes.node),
-  PropTypes.node,
-])
+Footer.propTypes =  {
+  children: PropTypes.oneOfType([
+    PropTypes.arrayOf(PropTypes.node),
+    PropTypes.node,
+  ])
+}
 
 export default Footer

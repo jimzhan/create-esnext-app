@@ -42,9 +42,11 @@ const FlexLayout = props => (
 )
 /* eslint-enable */
 
-FlexLayout.propTypes = PropTypes.oneOfType([
-  PropTypes.arrayOf(PropTypes.node),
-  PropTypes.node,
-])
+FlexLayout.propTypes =  {
+  children: PropTypes.oneOfType([
+    PropTypes.arrayOf(PropTypes.node),
+    PropTypes.node,
+  ])
+}
 
 export default FlexLayout

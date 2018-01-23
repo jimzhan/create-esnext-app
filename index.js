@@ -37,7 +37,7 @@ const createESNextApp = answers => {
     case 'MobX':
       project.create(name, templateDir, MobX)
       break
-    case 'MobX2':
+    case 'Parcel-MobX':
       project.create(name, templateDir, packages2.MobX)
       break
     default:
@@ -59,8 +59,8 @@ inquirer
       choices: [
         { name: 'Basic - ESNext Boilerplate', value: 'Basic' },
         { name: 'Fastify - Server Boilerplate', value: 'Fastify' },
-        { name: 'MobX + React Boilerplate', value: 'MobX' },
-        { name: 'MobX2 + React Boilerplate', value: 'MobX2' }
+        { name: 'MobX (CRA) + React Boilerplate', value: 'MobX' },
+        { name: 'MobX (Parcel) + React Boilerplate', value: 'Parcel-MobX' }
       ]
     }
   ])

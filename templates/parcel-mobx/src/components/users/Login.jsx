@@ -19,7 +19,7 @@ const { Item } = Form
 
 class Login extends React.Component {
   static propTypes = {
-    form: PropTypes.func.isRequired,
+    form: PropTypes.object.isRequired,
   }
 
   handleSubmit = (e) => {
