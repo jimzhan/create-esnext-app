@@ -2,6 +2,7 @@
 const chalk = require('chalk')
 const inquirer = require('inquirer')
 const validateProjectName = require('validate-npm-package-name')
+const packages2 = require('./lib/packages2')
 const { logger, packages, project } = require('./lib')
 
 const currentNodeVer = process.versions.node
@@ -27,15 +28,20 @@ const createESNextApp = answers => {
     chalk`{green ●} ☕️  Start creating ESNext application <type: {red ${template}}>: ${name}`
   )
 
+  const templateDir = template.toLowerCase()
+
   switch (answers.template) {
     case 'Fastify':
-      project.create(name, template, Fastify)
+      project.create(name, templateDir, Fastify)
       break
     case 'MobX':
-      project.create(name, template, MobX)
+      project.create(name, templateDir, MobX)
+      break
+    case 'MobX2':
+      project.create(name, templateDir, packages2.MobX)
       break
     default:
-      project.create(name, template, Basic)
+      project.create(name, templateDir, Basic)
   }
 }
 
@@ -53,7 +59,8 @@ inquirer
       choices: [
         { name: 'Basic - ESNext Boilerplate', value: 'Basic' },
         { name: 'Fastify - Server Boilerplate', value: 'Fastify' },
-        { name: 'MobX + React Boilerplate', value: 'MobX' }
+        { name: 'MobX + React Boilerplate', value: 'MobX' },
+        { name: 'MobX2 + React Boilerplate', value: 'MobX2' }
       ]
     }
   ])
