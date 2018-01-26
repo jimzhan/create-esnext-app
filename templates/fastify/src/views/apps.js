@@ -1,6 +1,7 @@
 import { resolve } from 'path'
 
-const pkg = import(resolve(process.cwd(), 'package.json'))
+// eslint-disable-next-line
+const pkg = require(resolve(process.cwd(), 'package.json'))
 const info = { name: pkg.name, version: pkg.version }
 
 const routes = async (app) => {
