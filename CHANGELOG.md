@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="0.12.3"></a>
+## [0.12.3](https://github.com/jimzhan/create-esnext-app/compare/v0.12.2...v0.12.3) (2018-01-26)
+
+
+### Bug Fixes
+
+* **pkg:** fixed missing array items issue on packages ([c89b874](https://github.com/jimzhan/create-esnext-app/commit/c89b874))
+
+
+
 <a name="0.12.2"></a>
 ## [0.12.2](https://github.com/jimzhan/create-esnext-app/compare/v0.12.1...v0.12.2) (2018-01-26)
 
