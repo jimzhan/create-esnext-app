@@ -70,7 +70,7 @@ create-esnext-app
   * [Conventional Changelog](https://github.com/commitizen/cz-conventional-changelog) as commit message template.
   * [CommitLint](https://github.com/marionebl/commitlint) as commit message format validator (via `commitmsg` hook provided by `husky`)
 * [ESLint](https://github.com/eslint/eslint) with:
-  * [StandardJS](https://github.com/standard/eslint-config-standard).
+  * [Airbnb Config](https://github.com/airbnb/javascript).
   * [VSCode](https://code.visualstudio.com/) supports.
   * [Jest](https://github.com/facebook/jest).
 * [Jest](https://github.com/facebook/jest) with [VSCode](https://code.visualstudio.com/) supports.
@@ -100,7 +100,5 @@ create-esnext-app
 * Required Extensions:
   - [Debugger for Chrome](https://marketplace.visualstudio.com/items?itemName=msjsdiag.debugger-for-chrome)
   - [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
-  - [JavaScript Standard Style](https://marketplace.visualstudio.com/items?itemName=chenxsan.vscode-standardjs)
-  - [Prettier-Standard](https://marketplace.visualstudio.com/items?itemName=numso.prettier-standard-vscode)
 * Workspace settings (via `.vscode/settings.json`).
 * Chrome based debugger (via `.vscode/launch.json`).
