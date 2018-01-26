@@ -12,10 +12,7 @@
     "plugins": [
       "transform-decorators-legacy",
       "transform-class-properties",
-      "transform-runtime",
-      ["module-resolver", {
-        "root": ["./src"]
-      }]
+      "transform-runtime"
     ]
   },
   "commitlint": {
@@ -32,16 +29,20 @@
     "root": true,
     "parser": "babel-eslint",
     "env": {
+      "node": true,
       "jest/globals": true
     },
-    "extends": [
-      "standard",
-      "standard-react"
-    ],
+    "extends": "airbnb-base",
     "plugins": [
       "html",
       "jest"
-    ]
+    ],
+    "rules": {
+      "semi": [
+        "error",
+        "never"
+      ]
+    }
   },
   "lint-staged": {
     "src/**/*.{js,jsx,css,less,scss}": [
@@ -68,7 +69,7 @@
     "commitmsg": "commitlint -e $GIT_PARAMS",
     "build": "babel src -d build",
     "clean": "rimraf build",
-    "lint": "eslint --ext .jsx,.js src tests",
+    "lint": "eslint --ext .jsx,.js src",
     "test": "cross-env NODE_ENV=test TIMEOUT=10000 jest --forceExit",
     "<start>": "---------- Application Services Starter ----------",
     "start": "per-env",

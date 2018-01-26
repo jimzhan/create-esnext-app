@@ -13,20 +13,46 @@
       "path": "cz-conventional-changelog"
     }
   },
+  "babel": {
+    "presets": [
+      [
+        "env",
+        "airbnb"
+      ]
+    ],
+    "plugins": [
+      "transform-decorators-legacy",
+      "transform-class-properties",
+      "transform-react-jsx",
+      [
+        "import",
+        {
+          "libraryName": "antd",
+          "libraryDirectory": "es",
+          "style": true
+        }
+      ]
+    ]
+  },
   "eslintConfig": {
     "root": true,
     "parser": "babel-eslint",
     "env": {
+      "browser": true,
+      "node": true,
       "jest/globals": true
     },
-    "extends": [
-      "standard",
-      "standard-react"
-    ],
+    "extends": "airbnb",
     "plugins": [
       "html",
       "jest"
-    ]
+    ],
+    "rules": {
+      "semi": [
+        "error",
+        "never"
+      ]
+    }
   },
   "lint-staged": {
     "src/**/*.{js,jsx,css,less,scss}": [
@@ -38,8 +64,7 @@
     "collectCoverageFrom": [
       "src/**/*.{js,jsx}",
       "!**/src/index.js",
-      "!**/src/setupTests.js",
-      "!**/src/registerServiceWorker.js"
+      "!**/src/setupTests.js"
     ]
   },
   "</Settings>": "------------------------ End of Application Settings ------------------------------",
@@ -48,13 +73,10 @@
     "prebuild": "npm run clean",
     "commit": "git add . && git-cz",
     "commitmsg": "commitlint -e $GIT_PARAMS",
-    "build": "react-app-rewired build",
+    "build": "NODE_ENV=production parcel build public/index.html",
     "clean": "rimraf build",
-    "lint": "eslint --ext .jsx,.js src tests",
-    "start": "per-env",
-    "start:development": "react-app-rewired start",
-    "prestart:production": "npm run build",
-    "start:production": "node build/index.js",
+    "lint": "eslint --ext .jsx,.js src",
+    "start": "NODE_ENV=development parcel public/index.html",
     "pretest": "rimraf coverage",
     "test": "cross-env NODE_ENV=test react-app-rewired test --coverage --env=jsdom"
   }

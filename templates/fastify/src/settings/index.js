@@ -11,8 +11,8 @@ let settings = {
     doc: 'The port to bind.',
     format: 'port',
     default: 8080,
-    env: 'PORT'
-  }
+    env: 'PORT',
+  },
 }
 
 /**
@@ -27,7 +27,7 @@ const configure = () => {
   dotenv.config()
 
   const files = glob.sync(`${__dirname}/*.js`, { ignore: '**/index.js' })
-  Object.values(files).forEach(abspath => {
+  Object.values(files).forEach((abspath) => {
     const module = require(abspath) // eslint-disable-line
     if (!module.default) {
       return

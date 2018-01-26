@@ -7,7 +7,7 @@ export const find = async () => {
   return response.data
 }
 
-export const findById = async id => {
+export const findById = async (id) => {
   const response = await axios.get(`${root}/${id}`)
   return response.data
 }

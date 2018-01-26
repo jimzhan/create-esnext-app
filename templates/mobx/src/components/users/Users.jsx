@@ -8,21 +8,21 @@ const columns = [
   { title: 'ID', dataIndex: 'id', key: 'id' },
   { title: 'Name', dataIndex: 'name', key: 'name' },
   { title: 'Email', dataIndex: 'email', key: 'email' },
-  { title: 'Website', dataIndex: 'website', key: 'website' }
+  { title: 'Website', dataIndex: 'website', key: 'website' },
 ]
 
 @inject('store')
 @observer
 class Users extends Component {
   static propTypes = {
-    store: PropTypes.object
+    store: PropTypes.func.isRequired,
   }
 
-  componentDidMount () {
+  componentDidMount() {
     this.props.store.userStore.loadUsers()
   }
 
-  render () {
+  render() {
     const { users } = this.props.store.userStore
     return (
       <div>

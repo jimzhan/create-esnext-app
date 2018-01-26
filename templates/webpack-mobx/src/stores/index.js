@@ -1,4 +1,4 @@
-import UserStore from './UserStore'
+import UserStore from './user-store'
 
 /**
  * --------------------------------------------------------------------------------

@@ -1,7 +1,7 @@
 import fastify from 'fastify'
-import settings from 'settings'
-import { env } from 'utils'
-import * as views from 'views'
+import { env } from './utils'
+import apps from './views'
+import settings from './settings'
 
 const app = fastify({ logger: true })
 
@@ -11,9 +11,9 @@ if (!env.isProduction) {
 }
 
 /* -------------------- Application Routes -------------------- */
-app.register(views.apps, { prefix: '/apps' })
+app.register(apps, { prefix: '/apps' })
 
-app.listen(settings.get('port'), function (err) {
+app.listen(settings.get('port'), (err) => {
   if (err) throw err
   app.log.info(`server listening on ${app.server.address().port}`)
 })

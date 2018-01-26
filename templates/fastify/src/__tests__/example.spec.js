@@ -1,4 +1,4 @@
-import * as User from 'example'
+import * as User from '../example'
 
 const URL = 'https://jsonplaceholder.typicode.com'
 

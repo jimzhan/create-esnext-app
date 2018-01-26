@@ -1,4 +1,4 @@
-import UserStore from './user-store'
+import UserStore from './UserStore'
 
 /**
  * --------------------------------------------------------------------------------
@@ -12,7 +12,7 @@ import UserStore from './user-store'
  * --------------------------------------------------------------------------------
  */
 class Store {
-  constructor () {
+  constructor() {
     this.userStore = new UserStore(this)
   }
 }

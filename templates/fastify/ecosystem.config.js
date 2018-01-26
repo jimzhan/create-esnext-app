@@ -6,16 +6,16 @@ module.exports = {
       interpreter: './node_modules/.bin/babel-node',
       watch: true,
       env: {
-        NODE_ENV: 'development'
-      }
+        NODE_ENV: 'development',
+      },
     },
     {
       name: 'PROD',
       script: 'build/index.js',
       env: {
-        NODE_ENV: 'production'
-      }
-    }
+        NODE_ENV: 'production',
+      },
+    },
   ],
   /**
    * ------- Deployment Section -------
@@ -30,8 +30,8 @@ module.exports = {
       path: '/var/www/production',
       'post-deploy': 'npm install && npm start',
       env: {
-        NODE_ENV: 'production'
-      }
+        NODE_ENV: 'production',
+      },
     },
     staging: {
       user: 'node',
@@ -41,8 +41,8 @@ module.exports = {
       path: '/var/www/staging',
       'post-deploy': 'npm install && npm start',
       env: {
-        NODE_ENV: 'production'
-      }
-    }
-  }
+        NODE_ENV: 'production',
+      },
+    },
+  },
 }

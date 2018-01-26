@@ -4,11 +4,11 @@ import { action, observable } from 'mobx'
 export default class UserStore {
   @observable users
 
-  constructor (root) {
+  constructor(root) {
     this.root = root
   }
 
-  @action async loadUsers () {
+  @action async loadUsers() {
     this.users = await UserServices.find()
   }
 }

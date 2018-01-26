@@ -1,3 +1,3 @@
 import apps from './apps'
 
-export { apps }
+export default apps

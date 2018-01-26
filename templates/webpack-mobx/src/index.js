@@ -15,7 +15,7 @@ const renderApp = () => {
         <App />
       </Provider>
     </AppContainer>,
-    document.getElementById('root')
+    document.getElementById('root'),
   )
   registerServiceWorker()
 }

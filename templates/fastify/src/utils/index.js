@@ -1,3 +1,4 @@
 import * as env from './env'
+import * as http from './http'
 
-export { env }
+export { env, http }
