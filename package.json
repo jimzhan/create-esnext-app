@@ -8,20 +8,11 @@
   "babel": {
     "presets": [
       "env",
-      "jest"
+      "airbnb"
     ],
     "plugins": [
       "transform-decorators-legacy",
-      "transform-class-properties",
-      "transform-runtime",
-      [
-        "module-resolver",
-        {
-          "root": [
-            "./lib"
-          ]
-        }
-      ]
+      "transform-class-properties"
     ]
   },
   "commitlint": {
@@ -36,14 +27,21 @@
   },
   "eslintConfig": {
     "root": true,
+    "extends": "airbnb-base",
     "parser": "babel-eslint",
     "env": {
+      "node": true,
       "jest/globals": true
     },
-    "extends": "standard",
     "plugins": [
       "jest"
-    ]
+    ],
+    "rules": {
+      "semi": [
+        "error",
+        "never"
+      ]
+    }
   },
   "lint-staged": {
     "src/**/*.{js,jsx,css,less,scss}": [
@@ -108,12 +106,11 @@
     "commitizen": "^2.9.6",
     "cz-conventional-changelog": "^2.1.0",
     "eslint": "^4.13.0",
-    "eslint-config-standard": "^10.2.1",
+    "eslint-config-airbnb-base": "^12.1.0",
     "eslint-plugin-import": "^2.8.0",
     "eslint-plugin-jest": "^21.4.2",
     "eslint-plugin-node": "^5.2.1",
     "eslint-plugin-promise": "^3.6.0",
-    "eslint-plugin-standard": "^3.0.1",
     "jest": "^21.2.1",
     "prettier-standard": "^7.0.3",
     "standard-version": "^4.2.0"
