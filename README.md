@@ -70,7 +70,7 @@ create-esnext-app
   * [Conventional Changelog](https://github.com/commitizen/cz-conventional-changelog) as commit message template.
   * [CommitLint](https://github.com/marionebl/commitlint) as commit message format validator (via `commitmsg` hook provided by `husky`)
 * [ESLint](https://github.com/eslint/eslint) with:
-  * [Airbnb Config](https://github.com/airbnb/javascript).
+  * [Airbnb Config](https://github.com/airbnb/javascript) without `semicolon` :trollface:
   * [VSCode](https://code.visualstudio.com/) supports.
   * [Jest](https://github.com/facebook/jest).
 * [Jest](https://github.com/facebook/jest) with [VSCode](https://code.visualstudio.com/) supports.
