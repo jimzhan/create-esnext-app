@@ -1,7 +1,7 @@
 import fastify from 'fastify'
-import { env } from './utils'
-import apps from './views'
-import settings from './settings'
+import { env } from 'utils'
+import apps from 'views'
+import settings from 'settings'
 
 const app = fastify({ logger: true })
 

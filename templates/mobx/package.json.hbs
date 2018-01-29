@@ -24,6 +24,9 @@
       "transform-decorators-legacy",
       "transform-class-properties",
       "transform-react-jsx",
+      ["module-resolver", {
+        "root": ["./src"]
+      }],
       [
         "import",
         {
@@ -52,6 +55,15 @@
         "error",
         "never"
       ]
+    },
+    "settings": {
+      "import/resolver": {
+        "babel-module": {
+          "root": [
+            "./src"
+          ]
+        }
+      }
     }
   },
   "lint-staged": {

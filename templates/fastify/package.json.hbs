@@ -12,7 +12,10 @@
     "plugins": [
       "transform-decorators-legacy",
       "transform-class-properties",
-      "transform-runtime"
+      "transform-runtime",
+      ["module-resolver", {
+        "root": ["./src"]
+      }]
     ]
   },
   "commitlint": {
@@ -42,6 +45,15 @@
         "error",
         "never"
       ]
+    },
+    "settings": {
+      "import/resolver": {
+        "babel-module": {
+          "root": [
+            "./src"
+          ]
+        }
+      }
     }
   },
   "lint-staged": {
