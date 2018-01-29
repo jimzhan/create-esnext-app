@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="0.13.0"></a>
+# [0.13.0](https://github.com/jimzhan/create-esnext-app/compare/v0.12.5...v0.13.0) (2018-01-29)
+
+
+### Features
+
+* **eslint:** added module resolver supports for eslint ([00592f9](https://github.com/jimzhan/create-esnext-app/commit/00592f9))
+
+
+
 <a name="0.12.5"></a>
 ## [0.12.5](https://github.com/jimzhan/create-esnext-app/compare/v0.12.4...v0.12.5) (2018-01-26)
 
