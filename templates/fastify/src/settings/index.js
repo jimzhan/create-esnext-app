@@ -7,11 +7,29 @@ import convict from 'convict'
  * Root Settings.
  */
 let settings = {
+  env: {
+    doc: 'Deployment environment',
+    format: String,
+    default: 'development',
+    env: 'NODE_ENV',
+  },
+  host: {
+    doc: 'The host to run the system.',
+    format: String,
+    default: '0.0.0.0',
+    env: 'HOST',
+  },
   port: {
     doc: 'The port to bind.',
     format: 'port',
     default: 8080,
     env: 'PORT',
+  },
+  secret: {
+    doct: 'Application secret',
+    format: String,
+    default: null,
+    env: 'SECRET',
   },
 }
 

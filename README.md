@@ -14,6 +14,7 @@ Opinionated ESNext application boilerplate generator.
 ## Key Features
 
 * Cutting edge [babel](https://babeljs.io/) supports.
+* [Docker](http://www.docker.com/) supports.
 * GIT Workflow includes
   - auto-code formatting (via [prettier-standard](https://github.com/sheerun/prettier-standard)).
   - structural commit message restriction/validation (via [commitizen](https://github.com/commitizen/cz-cli)/[conventional-changelog](https://github.com/commitizen/cz-conventional-changelog) and [commitlint](https://github.com/marionebl/commitlint))
@@ -24,7 +25,7 @@ Opinionated ESNext application boilerplate generator.
 ## Supported Templates
 
 * [Basic](#basic---esnext-boilerplate) - Foundation of every ESNext based application.
-* [Fastify](#fastify-server-boilerplate) - Fastify based API server template.
+* [Fastify](#fastify-server-boilerplate) - Fastify based API server template with Docker support.
 * [MobX](#mobx-parcel--react-boilerplate) - MobX + React template built on top of [Parcel](https://parceljs.org/)
 
 ## Installation
@@ -85,6 +86,7 @@ create-esnext-app
 * [Fastify](https://github.com/fastify/fastify) - An modern efficient server.
 * [Convict](https://github.com/mozilla/node-convict) - expands on the standard pattern of configuring with dynamic settings supports.
 * [PM2](https://github.com/Unitech/pm2) - production process manager.
+* [Docker](https://www.docker.com/) - containerization ready for your production deployment.
 
 
 ### MobX (Parcel) + React Boilerplate
