@@ -22,7 +22,7 @@ let settings = {
   port: {
     doc: 'The port to bind.',
     format: 'port',
-    default: 8080,
+    default: 9394,
     env: 'PORT',
   },
   secret: {

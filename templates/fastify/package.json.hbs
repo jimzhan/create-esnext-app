@@ -73,6 +73,15 @@
       "<rootDir>/src/__tests__/bootstrap.js"
     ]
   },
+  "per-env": {
+    "development": {
+      "PORT": "9394"
+    },
+    "production": {
+      "PORT": "9394",
+      "IMAGE": "server:fastify"
+    }
+  },
   "</Settings>": "------------------------ End of Application Settings ------------------------------",
   "scripts": {
     "precommit": "lint-staged",
@@ -85,13 +94,16 @@
     "<Application>": "---------- Application Services ----------",
     "build": "per-env",
     "build:development": "npm run clean && npm run compile",
-    "build:production": "docker build -t server .",
+    "build:production": "docker build -t ${IMAGE} .",
     "start": "per-env",
     "start:development": "nodemon src/main.js",
-    "start:production": "docker run -d -p 8080:8080 server",
-    "bash": "docker exec -it $(docker ps -q --filter ancestor=server) bash",
-    "stop": "docker stop $(docker ps -q --filter ancestor=server)",
-    "rmi": "docker rmi server",
+    "start:production": "docker run -d -p ${PORT}:${PORT} ${IMAGE}",
+    "bash": "per-env",
+    "bash:production": "docker exec -it $(docker ps -q --filter ancestor=${IMAGE}) bash",
+    "stop": "per-env",
+    "stop:production": "docker stop $(docker ps -q --filter ancestor=${IMAGE})",
+    "rim": "per-env",
+    "rmi:production": "docker rmi ${IMAGE}",
     "<Deployment>": "---------- Application Deployment ----------",
     "deploy": "per-env",
     "deploy:production": "pm2 deploy ecosystem.config.js production",
