@@ -75,11 +75,11 @@
   },
   "per-env": {
     "development": {
-      "PORT": "9394"
+      "port": "9394"
     },
     "production": {
-      "PORT": "9394",
-      "IMAGE": "server:fastify"
+      "port": "9394",
+      "image": "fastify/server"
     }
   },
   "</Settings>": "------------------------ End of Application Settings ------------------------------",
@@ -87,23 +87,21 @@
     "precommit": "lint-staged",
     "commit": "git add . && git-cz",
     "commitmsg": "commitlint -e $GIT_PARAMS",
-    "compile": "babel src -d dist",
-    "clean": "rimraf dist",
     "lint": "eslint --ext .jsx,.js src",
     "test": "cross-env NODE_ENV=test TIMEOUT=10000 jest --forceExit",
-    "<Application>": "---------- Application Services ----------",
+    "<Env>": "--------------------------------------------------------------------------------",
     "build": "per-env",
-    "build:development": "npm run clean && npm run compile",
-    "build:production": "docker build -t ${IMAGE} .",
+    "build:development": "rimraf dist && babel src -d dist",
+    "build:production": "docker build -t ${image} .",
     "start": "per-env",
     "start:development": "nodemon src/main.js",
-    "start:production": "docker run -d -p ${PORT}:${PORT} ${IMAGE}",
-    "bash": "per-env",
-    "bash:production": "docker exec -it $(docker ps -q --filter ancestor=${IMAGE}) bash",
+    "start:production": "docker run -d -p ${port}:${port} ${image}",
+    "sh": "per-env",
+    "sh:production": "docker exec -it $(docker ps -q --filter ancestor=${image}) /bin/sh",
     "stop": "per-env",
-    "stop:production": "docker stop $(docker ps -q --filter ancestor=${IMAGE})",
-    "rim": "per-env",
-    "rmi:production": "docker rmi ${IMAGE}",
+    "stop:production": "docker stop $(docker ps -q --filter ancestor=${image})",
+    "rmi": "per-env",
+    "rmi:production": "docker rmi ${image}",
     "<Deployment>": "---------- Application Deployment ----------",
     "deploy": "per-env",
     "deploy:production": "pm2 deploy ecosystem.config.js production",

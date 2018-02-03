@@ -1,22 +1,21 @@
-FROM node:latest
+FROM keymetrics/pm2:latest-alpine
 
 # Setup Environment
-ENV ROOT /server
-ENV NODE $ROOT/node_modules/.bin
+ENV NODE_ENV development
+ENV NPM_CONFIG_LOGLEVEL warn
+ENV HOME /home/www
 
 # Prepare Application Sources
-RUN mkdir $ROOT
-WORKDIR $ROOT
-COPY ./package*.json $ROOT/
-COPY ./src $ROOT/src
+RUN mkdir -p $HOME
+WORKDIR $HOME
+COPY ./p*.json $HOME/
+COPY ./src $HOME/src
 
 # Setup Application
-RUN npm install --silent
-ENV NODE_ENV production
+RUN npm install
+RUN npm run build
+RUN rm -r src
+RUN npm prune --production
 
-RUN $NODE/rimraf $ROOT/dist
-RUN $NODE/babel src -d dist
-RUN $NODE/rimraf $ROOT/src
-
-CMD [ "node", "dist/main.js" ]
+CMD [ "pm2-runtime", "start", "pm2.json" ]
 
