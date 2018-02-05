@@ -6,6 +6,7 @@ ENV HOME /home/www
 
 # Prepare Application Sources
 RUN npm install --global pm2
+RUN pm2 install pm2-logrotate
 RUN mkdir -p $HOME
 WORKDIR $HOME
 COPY ./.bashrc $HOME/
@@ -19,5 +20,7 @@ RUN npm install
 RUN npm run build
 RUN npm prune --production
 RUN rm -r src
+ENV NODE_ENV production
 
 CMD [ "pm2-docker", "start", "process.yml" ]
+
