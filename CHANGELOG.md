@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="0.15.0"></a>
+# [0.15.0](https://github.com/jimzhan/create-esnext-app/compare/v0.14.2...v0.15.0) (2018-02-05)
+
+
+### Features
+
+* **docker:** added full docker support with pm2 ([4800ae8](https://github.com/jimzhan/create-esnext-app/commit/4800ae8))
+
+
+
 <a name="0.14.2"></a>
 ## [0.14.2](https://github.com/jimzhan/create-esnext-app/compare/v0.14.1...v0.14.2) (2018-02-03)
 
