@@ -1,0 +1,11 @@
+apps:
+  - name: 'fastify'
+    script: 'dist/main.js'
+    exec_mode: 'cluster'
+    instances: 0
+    max_memory_restart: '2G'
+    watch: false
+    autorestart: true
+    env:
+      NODE_ENV: 'production'
+

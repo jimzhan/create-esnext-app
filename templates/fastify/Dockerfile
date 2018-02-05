@@ -1,21 +1,23 @@
-FROM keymetrics/pm2:latest-alpine
+FROM node:latest
 
 # Setup Environment
-ENV NODE_ENV development
 ENV NPM_CONFIG_LOGLEVEL warn
 ENV HOME /home/www
 
 # Prepare Application Sources
+RUN npm install --global pm2
 RUN mkdir -p $HOME
 WORKDIR $HOME
-COPY ./p*.json $HOME/
+COPY ./.bashrc $HOME/
+COPY ./package*.json $HOME/
+COPY ./process.yml $HOME/
 COPY ./src $HOME/src
 
 # Setup Application
+ENV NODE_ENV development
 RUN npm install
 RUN npm run build
-RUN rm -r src
 RUN npm prune --production
+RUN rm -r src
 
-CMD [ "pm2-runtime", "start", "pm2.json" ]
-
+CMD [ "pm2-docker", "start", "process.yml" ]
