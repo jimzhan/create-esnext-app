@@ -14,7 +14,9 @@ Opinionated ESNext application boilerplate generator.
 ## Key Features
 
 * Cutting edge [babel](https://babeljs.io/) supports.
-* [Docker](http://www.docker.com/) supports.
+* [Docker](http://www.docker.com/) with [pm2](https://github.com/Unitech/pm2) supports:
+  - [node](https://hub.docker.com/_/node/) latest alpine.
+  - [pm2](https://github.com/Unitech/pm2) with cluster supports.
 * GIT Workflow includes
   - auto-code formatting (via [prettier-standard](https://github.com/sheerun/prettier-standard)).
   - structural commit message restriction/validation (via [commitizen](https://github.com/commitizen/cz-cli)/[conventional-changelog](https://github.com/commitizen/cz-conventional-changelog) and [commitlint](https://github.com/marionebl/commitlint))
