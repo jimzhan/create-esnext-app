@@ -15,8 +15,8 @@ Opinionated ESNext application boilerplate generator.
 
 * Cutting edge [babel](https://babeljs.io/) supports.
 * [Docker](http://www.docker.com/) with [pm2](https://github.com/Unitech/pm2) supports:
-  - [node](https://hub.docker.com/_/node/) latest alpine.
-  - [pm2](https://github.com/Unitech/pm2) with cluster supports.
+  - [node](https://hub.docker.com/_/node/) with [Debian](https://www.debian.org/).
+  - [pm2](https://github.com/Unitech/pm2) with cluster supports at server side.
 * GIT Workflow includes
   - auto-code formatting (via [prettier-standard](https://github.com/sheerun/prettier-standard)).
   - structural commit message restriction/validation (via [commitizen](https://github.com/commitizen/cz-cli)/[conventional-changelog](https://github.com/commitizen/cz-conventional-changelog) and [commitlint](https://github.com/marionebl/commitlint))
@@ -28,7 +28,7 @@ Opinionated ESNext application boilerplate generator.
 
 * [Basic](#basic---esnext-boilerplate) - Foundation of every ESNext based application.
 * [Fastify](#fastify-server-boilerplate) - Fastify based API server template with Docker support.
-* [MobX](#mobx-parcel--react-boilerplate) - MobX + React template built on top of [Parcel](https://parceljs.org/)
+* [MobX](#mobx-parcel--react-boilerplate) - MobX + React template built on top of [Parcel](https://parceljs.org/) with Docker support.
 
 ## Installation
 
@@ -98,6 +98,7 @@ create-esnext-app
 * [Enzyme](https://github.com/airbnb/enzyme) testing utilities for React.
 * [Ant Design](https://github.com/ant-design/ant-design/) An enterprise-class UI design language and React-based implementation.
 * [mobx-react](https://github.com/mobxjs/mobx-react) - React bindings for MobX.
+* [Docker](https://www.docker.com/) - containerization ready for your production deployment.
 
 
 ## VSCode Supports (Optional)
