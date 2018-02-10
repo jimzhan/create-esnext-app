@@ -16,8 +16,8 @@ COPY ./src $TEMP/src
 COPY ./public $TEMP/public
 
 # Setup Application
-ENV NODE_ENV development
 WORKDIR $TEMP
+ENV NODE_ENV development
 RUN npm install && npm run build
 ENV NODE_ENV production
 RUN cp $TEMP/dist/* $ROOT/ && rm -rf $TEMP
