@@ -11,6 +11,7 @@ RUN apt-get update && \
     mkdir -p $ROOT && mkdir -p $TEMP && mkdir -p /home/etc
 
 # Prepare Application Sources
+COPY ./.bashrc $HOME/
 COPY ./package*.json $TEMP/
 COPY ./src $TEMP/src
 COPY ./public $TEMP/public
