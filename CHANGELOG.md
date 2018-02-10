@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="0.16.0"></a>
+# [0.16.0](https://github.com/jimzhan/create-esnext-app/compare/v0.15.5...v0.16.0) (2018-02-10)
+
+
+### Features
+
+* **docker:** added full docker supports into MobX ([7bb23a7](https://github.com/jimzhan/create-esnext-app/commit/7bb23a7))
+
+
+
 <a name="0.15.5"></a>
 ## [0.15.5](https://github.com/jimzhan/create-esnext-app/compare/v0.15.4...v0.15.5) (2018-02-10)
 
