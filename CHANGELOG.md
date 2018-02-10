@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="0.15.4"></a>
+## [0.15.4](https://github.com/jimzhan/create-esnext-app/compare/v0.15.3...v0.15.4) (2018-02-10)
+
+
+### Bug Fixes
+
+* **docker:** fixed build path issue (copy) ([98f5cfc](https://github.com/jimzhan/create-esnext-app/commit/98f5cfc))
+
+
+
 <a name="0.15.3"></a>
 ## [0.15.3](https://github.com/jimzhan/create-esnext-app/compare/v0.15.2...v0.15.3) (2018-02-10)
 
