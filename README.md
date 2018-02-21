@@ -10,6 +10,7 @@ Opinionated ESNext application boilerplate generator.
 [![npm version](https://img.shields.io/npm/v/create-esnext-app.svg)](https://www.npmjs.com/package/create-esnext-app)
 [![npm downloads](https://img.shields.io/npm/dt/create-esnext-app.svg)](https://www.npmjs.com/package/create-esnext-app)
 
+![docker-node](https://user-images.githubusercontent.com/460877/36463289-fe3a3b8c-1703-11e8-861a-1530142eda3a.png)
 
 ## Key Features
 
