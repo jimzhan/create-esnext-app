@@ -1,4 +1,7 @@
+import { useStrict } from 'mobx'
 import UserStore from './UserStore'
+
+useStrict(true)
 
 /**
  * --------------------------------------------------------------------------------
