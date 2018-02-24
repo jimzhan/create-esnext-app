@@ -6,7 +6,6 @@ Opinionated ESNext application boilerplate generator.
 [![JavaScript Style Guide](https://camo.githubusercontent.com/387caee7992b38dcac6cb23f87abf0ba139d7101/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f636f64652532307374796c652d616972626e622d626c75652e737667)](https://github.com/airbnb/javascript)
 [![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/)
 [![Standard Version](https://img.shields.io/badge/release-standard%20version-brightgreen.svg)](https://github.com/conventional-changelog/standard-version)
-[![dependencies](https://david-dm.org/jimzhan/create-esnext-app.svg)](https://david-dm.org/jimzhan/create-esnext-app.svg)
 [![npm version](https://img.shields.io/npm/v/create-esnext-app.svg)](https://www.npmjs.com/package/create-esnext-app)
 [![npm downloads](https://img.shields.io/npm/dt/create-esnext-app.svg)](https://www.npmjs.com/package/create-esnext-app)
 
