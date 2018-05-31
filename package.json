@@ -1,0 +1,89 @@
+{
+  "name": "create-esnext-app",
+  "version": "0.1.0",
+  "description": "Opinionated ESNext application boilerplate generator.",
+  "main": "src/main.js",
+  "scripts": {
+    "<hooks>": "-------------------- GIT Hooks --------------------",
+    "precommit": "lint-staged",
+    "commit": "git add . && git-cz",
+    "commitmsg": "commitlint -e $GIT_PARAMS",
+    "</hooks>": "-------------------- End of GIT Hooks --------------------",
+    "lint": "eslint --ext .js src",
+    "test": "npm test"
+  },
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-angular"
+    ]
+  },
+  "config": {
+    "commitizen": {
+      "path": "cz-conventional-changelog"
+    }
+  },
+  "lint-staged": {
+    "src/**/*.js": [
+      "eslint --fix",
+      "git add"
+    ]
+  },
+  "eslintConfig": {
+    "root": true,
+    "extends": "airbnb-base"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jimzhan/create-esnext-app.git"
+  },
+  "keywords": [
+    "zero-configuration",
+    "alpine",
+    "application",
+    "app",
+    "babel",
+    "boilerplate",
+    "build-tools",
+    "build",
+    "cli",
+    "development",
+    "debian",
+    "docker",
+    "docker-compose",
+    "es6",
+    "es7",
+    "esnext",
+    "es2015",
+    "es2016",
+    "es2017",
+    "generator",
+    "nginx",
+    "pm2",
+    "scaffold",
+    "skeleton",
+    "template",
+    "tool"
+  ],
+  "author": "Jim Zhan <jim.zhan@me.com>",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/jimzhan/create-esnext-app/issues"
+  },
+  "homepage": "https://github.com/jimzhan/create-esnext-app#readme",
+  "devDependencies": {
+    "@commitlint/cli": "latest",
+    "@commitlint/config-angular": "latest",
+    "commitizen": "^2.10.1",
+    "cz-conventional-changelog": "^2.1.0",
+    "eslint": "latest",
+    "eslint-config-airbnb-base": "latest",
+    "eslint-plugin-import": "latest",
+    "husky": "latest",
+    "lint-staged": "latest"
+  },
+  "dependencies": {
+    "chalk": "latest",
+    "inquirer": "latest",
+    "validate-npm-package-name": "latest"
+  }
+}
