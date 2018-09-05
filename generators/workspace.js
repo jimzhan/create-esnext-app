@@ -19,6 +19,7 @@ const actions = [
     destination: out,
     templateFiles: [
       '.vscode',
+      '.autod.conf.js',
       '.editorconfig',
       '.eslintignore',
       '.eslintrc.js',

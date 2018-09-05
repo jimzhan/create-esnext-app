@@ -1,12 +1,55 @@
 #!/usr/bin/env node
 const path = require('path')
-const yargs = require('yargs')
+const chalk = require('chalk')
+const inquirer = require('inquirer')
+const validateProjectName = require('validate-npm-package-name')
+const helpers = require('./helpers')
 
-const { version } = require('./package.json')
+const plop = require('node-plop')(
+  path.resolve(__dirname, 'generators', 'plopfile.js'),
+)
+// ------------------------------------------------------------------------------------------
+//  Minimum system requirement safeguard.
+// ------------------------------------------------------------------------------------------
+const currentNodeVer = process.versions.node
+const major = currentNodeVer.split('.')[0]
+const requiredVer = 10
+if (major < requiredVer) {
+  helpers.error([
+    `You are running Node ${currentNodeVer}.`,
+    `Create ESNext App requires Node ${requiredVer} or higher.`,
+    'Please upgrade your node.',
+  ].join('\n'))
+  process.exit(1)
+}
 
-const argv = yargs
-  .usage('Usage: <name>')
-  .help()
-  .argv
+const createESNextApp = (answers) => {
+  const { name } = answers
+  const app = plop.getGenerator('new')
+  helpers.info(chalk`☕️  Start creating ESNext application <name: {red ${name}}>`)
 
-console.log(argv)
+  app.runActions({ name }).then(() => {
+    helpers.execute('npm', ['install', '--global', 'autod', 'yarn'])
+    // @TODO efficient installer
+    const cwd = path.resolve(process.cwd(), name)
+    helpers.execute('yarn', ['install', '--verbose'], { cwd })
+    helpers.info(`workspace <${name}> has been created`)
+  })
+}
+
+inquirer
+  .prompt([
+    {
+      type: 'input',
+      name: 'name',
+      message: 'Please provide your project name:',
+    },
+  ])
+  .then((answers) => {
+    if (!validateProjectName(answers.name)) {
+      logger.error('Please provide a valid project name')
+      process.exit(1)
+    } else {
+      createESNextApp(answers)
+    }
+  })

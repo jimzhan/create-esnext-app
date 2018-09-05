@@ -36,9 +36,15 @@
   "author": "Jim Zhan <jim.zhan@me.com>",
   "license": "Apache-2.0",
   "dependencies": {
+    "chalk": "^2.4.1",
+    "debug": "^3.1.0",
     "esm": "^3.0.81",
+    "execa": "^1.0.0",
+    "inquirer": "^6.2.0",
+    "log-symbols": "^2.2.0",
     "node-plop": "^0.16.0",
     "ora": "^3.0.0",
+    "validate-npm-package-name": "^3.0.0",
     "yargs": "^12.0.1"
   }
 }
