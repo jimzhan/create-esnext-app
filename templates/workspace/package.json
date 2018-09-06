@@ -15,5 +15,8 @@
     "commitmsg": "commitlint -e $GIT_PARAMS",
     "lint": "esnext lint packages",
     "test": "esnext test"
+  },
+  "resolutions": {
+    "gkt": "1.0.0"
   }
 }

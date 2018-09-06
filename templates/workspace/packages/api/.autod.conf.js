@@ -3,8 +3,10 @@ module.exports = {
   prefix: '~',
   devprefix: '^',
   dep: [
+    'koa'
   ],
   devdep: [
+    'nodemon'
   ],
   /* ------------------------------------------------------------
    * `lerna` based packages require manual installation via npm registry.

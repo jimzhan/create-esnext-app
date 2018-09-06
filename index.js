@@ -32,7 +32,10 @@ const createESNextApp = (answers) => {
     helpers.execute('npm', ['install', '--global', 'autod', 'yarn'])
     // @TODO efficient installer
     const cwd = path.resolve(process.cwd(), name)
-    helpers.execute('yarn', ['install', '--verbose'], { cwd })
+    helpers.execute('autod', null, { cwd })
+    helpers.execute('yarn', ['install'], { cwd })
+    helpers.execute('lerna', ['exec', '--', 'autod'], { cwd })
+    helpers.execute('yarn', ['install'], { cwd })
     helpers.info(`workspace <${name}> has been created`)
   })
 }

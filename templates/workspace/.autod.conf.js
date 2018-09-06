@@ -17,7 +17,7 @@ module.exports = {
     'standard-version',
   ],
   semver: [
-    'eslint@4.19.1',
+    'lerna@3.3.0',
   ],
   /* ------------------------------------------------------------
    * `lerna` based packages require manual installation via npm registry.

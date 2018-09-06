@@ -7,7 +7,6 @@ const data = { version: '0.1.0' }
 const type = 'addMany'
 
 const out = path.resolve(process.cwd(), '{{lowerCase name}}')
-
 // ------------------------------------------------------------
 // Root template files including VSCode settings & ESLint etc.
 // ------------------------------------------------------------
@@ -24,6 +23,7 @@ const actions = [
       '.eslintignore',
       '.eslintrc.js',
       '.yarnrc',
+      'lerna.json',
       'package.json',
       'README.md',
     ].map(item => path.join(basedir, item)),
@@ -41,7 +41,10 @@ fs.readdirSync(pkgdir)
       data,
       base: `${pkgdir}/${pkg}`,
       destination: `${out}/packages/{{lowerCase name}}-${pkg}`,
-      templateFiles: `${pkgdir}/${pkg}/**/**`,
+      templateFiles: [
+        `${pkgdir}/${pkg}/**/**`,
+        `${pkgdir}/${pkg}/.autod.conf.js`,
+      ]
     })
   })
 

@@ -1,6 +1,0 @@
-{
-  "name": "@{{ name }}/core",
-  "version": "{{ version }}",
-  "main": "index.js",
-  "license": "MIT"
-}
