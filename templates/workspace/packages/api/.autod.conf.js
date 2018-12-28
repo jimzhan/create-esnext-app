@@ -3,7 +3,20 @@ module.exports = {
   prefix: '~',
   devprefix: '^',
   dep: [
-    'koa'
+    'ava',
+    'bcrypt',
+    'boom',
+    'bson',
+    'confidence',
+    'cross-env',
+    'esm',
+    'glue',
+    'hapi',
+    'immutable',
+    'nodemon',
+    'nyc',
+    'rimraf',
+    'yar'
   ],
   devdep: [
     'nodemon'

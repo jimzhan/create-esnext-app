@@ -3,10 +3,10 @@ const path = require('path')
 const chalk = require('chalk')
 const inquirer = require('inquirer')
 const validateProjectName = require('validate-npm-package-name')
-const helpers = require('./helpers')
+const helpers = require('./lib/helpers')
 
 const plop = require('node-plop')(
-  path.resolve(__dirname, 'generators', 'plopfile.js'),
+  path.resolve(__dirname, 'lib', 'plopfile.js'),
 )
 // ------------------------------------------------------------------------------------------
 //  Minimum system requirement safeguard.
