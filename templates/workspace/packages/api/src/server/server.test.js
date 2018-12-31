@@ -2,13 +2,13 @@ import test from 'ava'
 import { start } from '../server'
 import settings from '../settings'
 
-let server 
+let server
 
-test.beforeEach(t => {
+test.beforeEach(async () => {
   server = await start()
 })
 
-test.afterEach(t => {
+test.afterEach(async () => {
   await server.stop()
   server = null
 })

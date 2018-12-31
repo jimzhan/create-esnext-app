@@ -4,7 +4,6 @@ module.exports = {
   devprefix: '^',
   dep: [
     'lerna',
-    'wsrun',
     'esnext-scripts',
   ],
   devdep: [
@@ -17,7 +16,7 @@ module.exports = {
     'standard-version',
   ],
   semver: [
-    'lerna@3.3.0',
+    'lerna@3.8.0',
   ],
   /* ------------------------------------------------------------
    * `lerna` based packages require manual installation via npm registry.

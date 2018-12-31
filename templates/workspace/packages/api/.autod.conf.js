@@ -12,8 +12,8 @@ module.exports = {
     'esm',
     'glue',
     'hapi',
+    'hoek',
     'immutable',
-    'nodemon',
     'nyc',
     'rimraf',
     'yar'
