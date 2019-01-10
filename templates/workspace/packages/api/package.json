@@ -5,8 +5,13 @@
   "license": "MIT",
   "scripts": {
     "build": "npx rimraf dist && babel src -d dist",
-    "start": "nodemon --inspect --require esm index.js",
+    "start": "nodemon --inspect --require esm src/index.js",
     "lint": "esnext lint",
-    "test": "esnext test"
-  }
+    "test": "ava"
+  },
+	"ava": {
+		"require": [
+			"esm"
+		]
+	}
 }
