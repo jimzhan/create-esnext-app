@@ -16,7 +16,7 @@ const internals = {
 
   settings: {
     $meta: 'application settings file',
-    basedir: path.join(__dirname, '..'),
+    basedir: path.join(__dirname, '..', '..'),
     secret: process.env.SECRET,
     host: '127.0.0.1',
     port: {
